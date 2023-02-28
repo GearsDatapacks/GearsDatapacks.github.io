@@ -4,7 +4,7 @@ const EleventyWebcPlugin = require('@11ty/eleventy-plugin-webc');
 module.exports = function (config) {
   config.addPlugin(EleventyVitePlugin);
   config.addPlugin(EleventyWebcPlugin, {
-    components: 'src/_includes/components/**/*.webc',
+    components: 'src/_includes/components/**/*.html',
   });
 
   // Static assets to pass through

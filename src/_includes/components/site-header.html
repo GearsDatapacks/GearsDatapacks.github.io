@@ -1,54 +1,53 @@
-<header>
-  <nav class="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between">
+<header class="bg-purple-700 flex from-header-start to-header-end select-none">
+  <nav
+    class="flex h-16 grow items-center justify-between gap-4 px-4 text-white"
+  >
+    <a href="/" class="heading">
       <figure class="flex flex-shrink-0 items-center space-x-1">
         <img
-          alt="11st starter-kit logo"
-          class="h-8 w-auto"
-          src="/images/11st-logo.svg"
-          height="32"
-          width="32"
+          alt="Gears logo"
+          class="max-w-none"
+          src="/images/logo.svg"
+          height="64"
+          width="64"
+          style="image-rendering: optimizeSpeed; image-rendering: pixelated"
         />
-        <figcaption>Starter-Kit</figcaption>
+        <figcaption class="text-2xl font-bold hidden sm:block">
+          Gears
+        </figcaption>
       </figure>
-      <ul class="flex space-x-4">
-        <script webc:type="js" webc:is="template">
-          navigation.items
-            .map((item) => {
-              let current;
-              let highlight;
+    </a>
+    <ul class="flex space-x-4">
+      <script webc:type="js" webc:is="template">
+        navigation.items
+          .map((item) => {
+            let current;
+            let highlight;
 
-              if (item.url === page.url) {
-                current = 'aria-current="page"';
-                highlight = 'cursor-default';
-              } else {
-                current = '';
-                highlight = 'underline';
-              }
+            if (item.url === page.url) {
+              current = 'aria-current="page"';
+              highlight = 'cursor-default border-gray-400 text-gray-400';
+            } else {
+              current = '';
+              highlight =
+                'border-cyan-500 text-cyan-300 hover:underline hover:text-2xl';
+            }
 
-              return `
+            return `
                 <li>
                   <a
                     href="${item.url}"
-                    class="text-base font-bold ${highlight}"
+                    class="text-xl font-bold border-2 p-2 font-size ease-linear duration-75 ${highlight}"
                     ${current}
+                    style="transition-property: font-size"
                   >
                     ${item.text}
                   </a>
                 </li>
               `;
-            })
-            .join('');
-        </script>
-        <li>
-          <a
-            href="https://github.com/stefanfrede/11st-starter-kit/"
-            class="text-base font-bold underline hover:text-green-900"
-          >
-            GitHub
-          </a>
-        </li>
-      </ul>
-    </div>
+          })
+          .join('');
+      </script>
+    </ul>
   </nav>
 </header>
