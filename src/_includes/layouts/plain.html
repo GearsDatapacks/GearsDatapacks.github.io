@@ -7,16 +7,21 @@
 
     <title webc:is="meta-title"></title>
 
-    <link webc:is="meta-canonical"></link>
+    <link webc:is="meta-canonical" />
 
-    <meta webc:is="meta-property"></meta>
+    <meta webc:is="meta-property" />
 
-    <meta webc:is="meta-social"></meta>
+    <meta webc:is="meta-social" />
 
-    <meta webc:is="meta-description"></meta>
+    <meta webc:is="meta-description" />
 
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-    <link rel="alternate icon" href="/favicon.ico" type="image/png" sizes="48x48" />
+    <link
+      rel="alternate icon"
+      href="/favicon.ico"
+      type="image/png"
+      sizes="48x48"
+    />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" sizes="192x192" />
     <link rel="mask-icon" href="/favicon.svg" color="#4a5568" />
 
@@ -38,13 +43,8 @@
       onload="this.media='all'; this.onload=null;"
     />
   </head>
-  <body class="min-h-screen bg-white" data-env="{{ node.env }}">
-    <site-header></site-header>
-
+  <body class="min-h-screen bg-white">
     <div class="py-10" @html="content"></div>
-
-    <site-banner></site-banner>
-
     <script type="module" src="/main.js" webc:keep></script>
   </body>
 </html>
