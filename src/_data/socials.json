@@ -1,0 +1,12 @@
+{
+  "items": [
+    {
+      "url": "https://youtube.com/@Gearsdatapacks",
+      "icon": "/images/youtube.png"
+    },
+    {
+      "url": "https://github.com/Gearsdatapacks",
+      "icon": "/images/github.png"
+    }
+  ]
+}
