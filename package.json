@@ -1,7 +1,7 @@
 {
-  "name": "11st-starter-kit",
-  "description": "11ty, powered by Vite with Tailwind CSS and Alpine.js.",
-  "version": "3.0.0",
+  "name": "gears-website",
+  "description": "Gears' official website",
+  "version": "0.1.0",
   "engines": {
     "node": "18.x.x",
     "npm": "9.x.x"
@@ -9,7 +9,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:stefanfrede/11st-starter-kit.git"
+    "url": "git@github.com:GearsDatapacks/website-wip.git"
   },
   "keywords": [
     "alpinejs",
@@ -22,15 +22,15 @@
     "vite"
   ],
   "author": {
-    "name": "Stefan Frede",
-    "email": "stefan@frede.dev"
+    "name": "Gears",
+    "email": "gearsOfficial@proton.me"
   },
-  "license": "MIT",
+  "license": "LGPL",
   "private": true,
   "bugs": {
-    "url": "https://github.com/stefanfrede/11st-starter-kit/issues"
+    "url": "https://github.com/GearsDatapacks/website-wip/issues"
   },
-  "homepage": "https://11st-starter-kit.netlify.app",
+  "homepage": "https://gearsdatapacks.netlify.app",
   "lint-staged": {
     "*.html": "prettier --write",
     "*.css": "stylelint --cache --fix",

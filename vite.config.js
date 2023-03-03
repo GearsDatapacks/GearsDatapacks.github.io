@@ -25,9 +25,9 @@ export default defineConfig({
         'apple-touch-icon.png',
       ],
       manifest: {
-        name: '11st-Starter-Kit',
-        short_name: '11st-Starter-Kit',
-        description: '11ty, powered by Vite with Tailwind CSS and Alpine.js.',
+        name: "Gears' Website",
+        short_name: 'gears-website',
+        description: "Gears' official website",
         scope: '/',
         start_url: '/',
         display: 'standalone',
