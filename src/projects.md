@@ -1,6 +1,6 @@
 ---
 layout: 'layouts/home.html'
-title: 'About'
+title: 'Projects'
 meta:
   desc:
     '11st-Starter-Kit is a minimal starting point for building static websites
@@ -11,4 +11,3 @@ intro:
     'Clone and deploy your own <span class="text-gray-900 font-semibold">11st
     Starter-Kit</span> starter template.'
 ---
-
