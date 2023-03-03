@@ -7,6 +7,14 @@
     {
       "url": "https://github.com/Gearsdatapacks",
       "icon": "/images/github.png"
+    },
+    {
+      "url": "https://modrinth.com/user/GearsDatapacks",
+      "icon": "/images/modrinth.svg"
+    },
+    {
+      "url": "https://discord.gg/fmPKDqf9ze",
+      "icon": "/images/discord.png"
     }
   ]
 }
