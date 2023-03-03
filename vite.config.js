@@ -19,7 +19,7 @@ export default defineConfig({
   plugins: [
     VitePWA({
       includeAssets: [
-        'favicon.svg',
+        'pwa-512x512.png',
         'favicon.ico',
         'robots.txt',
         'apple-touch-icon.png',
