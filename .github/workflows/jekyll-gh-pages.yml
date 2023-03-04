@@ -37,6 +37,8 @@ jobs:
         run: |
           npm ci
           npm run build
+      - name: Audit URLs using Lighthouse
+        uses: treosh/lighthouse-ci-action@v9
         with:
           urls: |
             ${{ steps.waitFor200.outputs.url }}
