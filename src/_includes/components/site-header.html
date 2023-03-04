@@ -23,26 +23,29 @@
           .map((item) => {
             let current;
             let highlight;
+            let elem;
 
             if (item.url === page.url) {
               current = 'aria-current="page"';
               highlight = 'cursor-default border-gray-400 text-gray-400';
+              elem = 'span';
             } else {
               current = '';
               highlight =
                 'border-cyan-500 text-cyan-300 hover:underline hover:text-2xl';
+              elem = 'a';
             }
 
             return `
                 <li>
-                  <a
+                  <${elem}
                     href="${item.url}"
                     class="text-xl font-bold border-2 p-2 ease-linear duration-75 ${highlight}"
                     ${current}
                     style="transition-property: font-size"
                   >
                     ${item.text}
-                  </a>
+                  </${elem}>
                 </li>
               `;
           })
@@ -91,24 +94,27 @@
             .map((item) => {
               let current;
               let highlight;
+              let elem;
 
               if (item.url === page.url) {
                 current = 'aria-current="page"';
                 highlight = 'cursor-default border-gray-400 text-gray-400';
+                elem = 'a';
               } else {
                 current = '';
                 highlight = 'border-cyan-500 text-cyan-300 hover:underline';
+                elem = 'span';
               }
 
               return `
-                  <a
+                  <${elem}
                     href="${item.url}"
                     class="text-xl font-bold border-2 p-2 ease-linear duration-75 ${highlight}"
                     ${current}
                     style="transition-property: font-size"
                   >
                     ${item.text}
-                  </a>
+                  </${elem}>
               `;
             })
             .join('');
