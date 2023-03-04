@@ -28,6 +28,14 @@ module.exports = {
         icon: '48px',
         icon_padding: '72px',
       },
+      animation: {
+        write: 'write 4s linear forwards',
+      },
+      keyframes: {
+        write: {
+          '100%': { 'stroke-dashoffset': '0' },
+        },
+      },
     },
   },
   variants: {},

@@ -5,8 +5,7 @@ meta:
   desc:
     "Gears' Official website"
 intro:
-  title: 'Get Yours'
+  title: 'My Projects'
   desc:
-    'Clone and deploy your own <span class="text-gray-900 font-semibold">11st
-    Starter-Kit</span> starter template.'
+    '<span class="text-3xl">Soon™</span>'
 ---

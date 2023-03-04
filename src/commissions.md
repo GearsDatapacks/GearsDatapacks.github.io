@@ -5,9 +5,9 @@ meta:
   desc:
     "Gears' Official website"
 intro:
-  title: 'Get Yours'
+  title: 'Datapack commissions'
   desc:
-    'Clone and deploy your own <span class="text-gray-900 font-semibold">11st
-    Starter-Kit</span> starter template.'
+    'Amongst other things, I make paid datapacks for people.
+    If you would like me to make you a datapack, please <a href="/contact/" class="hover:underline font-bold">contact me</a>.'
 ---
 

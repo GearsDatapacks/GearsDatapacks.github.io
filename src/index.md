@@ -5,9 +5,11 @@ meta:
   desc:
     "Gears' Official website"
 intro:
-  title: 'Welcome to Your Eleventy App'
+  title: 'Hello and welcome to my website!'
   desc:
-    'For a guide and recipes on how to configure / customize this project, check
-    out the <a href="https://www.11ty.dev/docs/" class="font-medium underline">Eleventy</a> and <a href="https://vitejs.dev/"
-    class="font-medium underline">Vite</a> documentation.'
+    'I am Gears, a software developer and Minecraft YouTuber.<br/>
+    More about me in the <a href="/about/" class="underline font-bold">about</a> section.<br/>
+    You can check out my finished and ongoing projects in the <a href="/projects/" class="underline font-bold">projects</a> section.<br/>
+    For information on Minecraft datapack commissions, see <a href="/commissions/" class="underline font-bold">here</a>.<br/>
+    If you have more questions, you can <a href="/contact/" class="underline font-bold">contact me</a>.'
 ---

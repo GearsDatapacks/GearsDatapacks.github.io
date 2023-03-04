@@ -11,6 +11,10 @@
     {
       "text": "Commissions",
       "url": "/commissions/"
+    },
+    {
+      "text": "Contact me",
+      "url": "/contact/"
     }
   ]
 }

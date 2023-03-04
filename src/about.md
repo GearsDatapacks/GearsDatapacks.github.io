@@ -5,9 +5,8 @@ meta:
   desc:
     "Gears' Official website"
 intro:
-  title: 'Get Yours'
+  title: 'About'
   desc:
-    'Clone and deploy your own <span class="text-gray-900 font-semibold">11st
-    Starter-Kit</span> starter template.'
+    '...'
 ---
 

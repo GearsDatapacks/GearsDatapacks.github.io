@@ -12,12 +12,12 @@
           width="64"
           style="image-rendering: optimizeSpeed; image-rendering: pixelated"
         />
-        <figcaption class="text-3xl font-bold hidden sm:block">
+        <figcaption class="text-3xl font-bold hidden md:block">
           Gears
         </figcaption>
       </figure>
     </a>
-    <ul class="hidden mob:flex space-x-4">
+    <ul class="hidden sm:flex space-x-4">
       <script webc:type="js" webc:is="template">
         navigation.items
           .map((item) => {
@@ -52,7 +52,7 @@
           .join('');
       </script>
     </ul>
-    <div class="flexbox mob:hidden gap-4 relative" x-data="{ menu: false }">
+    <div class="flexbox sm:hidden gap-4 relative" x-data="{ menu: false }">
       <span x-on:click="menu = !menu" class="cursor-pointer flex justify-end">
         <svg
           xmlns="http://www.w3.org/2000/svg"
