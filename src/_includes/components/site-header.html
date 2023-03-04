@@ -17,7 +17,7 @@
         </figcaption>
       </figure>
     </a>
-    <ul class="flex space-x-4">
+    <ul class="hidden mob:flex space-x-4">
       <script webc:type="js" webc:is="template">
         navigation.items
           .map((item) => {
@@ -49,5 +49,71 @@
           .join('');
       </script>
     </ul>
+    <div class="flexbox mob:hidden gap-4 relative" x-data="{ menu: false }">
+      <span x-on:click="menu = !menu" class="cursor-pointer flex justify-end">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+          x-show="!menu"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6"
+          x-show="menu"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M6 18L18 6M6 6l12 12"
+          />
+        </svg>
+      </span>
+      <div
+        class="bg-gray-900 p-4 absolute text-center -right-4 flex flex-col items-center gap-4"
+        x-show="menu"
+      >
+        <script webc:type="js" webc:is="template">
+          navigation.items
+            .map((item) => {
+              let current;
+              let highlight;
+
+              if (item.url === page.url) {
+                current = 'aria-current="page"';
+                highlight = 'cursor-default border-gray-400 text-gray-400';
+              } else {
+                current = '';
+                highlight = 'border-cyan-500 text-cyan-300 hover:underline';
+              }
+
+              return `
+                  <a
+                    href="${item.url}"
+                    class="text-xl font-bold border-2 p-2 ease-linear duration-75 ${highlight}"
+                    ${current}
+                    style="transition-property: font-size"
+                  >
+                    ${item.text}
+                  </a>
+              `;
+            })
+            .join('');
+        </script>
+      </div>
+    </div>
   </nav>
 </header>
