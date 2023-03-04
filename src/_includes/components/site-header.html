@@ -97,13 +97,13 @@
               let elem;
 
               if (item.url === page.url) {
-                current = 'aria-current="page"';
-                highlight = 'cursor-default border-gray-400 text-gray-400';
-                elem = 'a';
-              } else {
                 current = '';
-                highlight = 'border-cyan-500 text-cyan-300 hover:underline';
+                highlight = 'cursor-default border-gray-400 text-gray-400';
                 elem = 'span';
+              } else {
+                current = 'aria-current="page"';
+                highlight = 'border-cyan-500 text-cyan-300 hover:underline';
+                elem = 'a';
               }
 
               return `
