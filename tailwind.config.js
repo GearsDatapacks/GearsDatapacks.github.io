@@ -17,6 +17,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
+        helvetica: ['Helvetica', ...defaultTheme.fontFamily.sans],
       },
       width: {
         icon: '48px',

@@ -70,7 +70,7 @@ export default defineConfig({
             type: 'image/png',
           },
           {
-            src: 'favicon.svg',
+            src: 'pwa-512x512.png',
             sizes: '512x512',
             type: 'image/png',
           },
