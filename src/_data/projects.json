@@ -1,0 +1,8 @@
+[
+  {
+    "name": "Test",
+    "id": "test",
+    "category": "foo",
+    "image": "/images/test.png"
+  }
+]
