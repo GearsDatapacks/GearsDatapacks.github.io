@@ -1,18 +1,22 @@
 {
   "items": [
     {
+      "name": "YouTube",
       "url": "https://youtube.com/@Gearsdatapacks",
       "icon": "/images/youtube.png"
     },
     {
+      "name": "Github",
       "url": "https://github.com/Gearsdatapacks",
       "icon": "/images/github.png"
     },
     {
+      "name": "Modrinth",
       "url": "https://modrinth.com/user/GearsDatapacks",
       "icon": "/images/modrinth.svg"
     },
     {
+      "name": "Discord",
       "url": "https://discord.gg/fmPKDqf9ze",
       "icon": "/images/discord.png"
     }

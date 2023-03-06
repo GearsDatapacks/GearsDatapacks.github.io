@@ -6,7 +6,7 @@
       socials.items
         .map(
           (item) =>
-            `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="shrink-0"><img src="${item.icon}" class="w-icon"></a>`,
+            `<a href="${item.url}" target="_blank" rel="noopener noreferrer" class="shrink-0"><img src="${item.icon}" alt="${item.name}" title="${item.name}" class="w-icon"></a>`,
         )
         .join('');
     </script>
