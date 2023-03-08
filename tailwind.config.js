@@ -17,7 +17,7 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
-        helvetica: ['Helvetica', ...defaultTheme.fontFamily.sans],
+        celandine: ['Celandine', ...defaultTheme.fontFamily.sans],
       },
       width: {
         icon: '48px',
@@ -30,11 +30,12 @@ module.exports = {
         icon_padding: '72px',
       },
       animation: {
-        write: 'write 4s linear forwards',
+        write: 'write 3s linear forwards',
       },
       keyframes: {
         write: {
-          '100%': { 'stroke-dashoffset': '0' },
+          '90%': { 'stroke-dashoffset': '0', fill: 'rgba(255,255,255,0)' },
+          '100%': { fill: 'rgba(255,255,255,255)' },
         },
       },
       scale: {
