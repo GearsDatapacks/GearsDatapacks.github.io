@@ -37,6 +37,9 @@ module.exports = {
           '100%': { 'stroke-dashoffset': '0' },
         },
       },
+      scale: {
+        105: '105%',
+      },
     },
   },
   variants: {},

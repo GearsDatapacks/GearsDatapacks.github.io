@@ -1,8 +1,74 @@
 [
   {
-    "name": "Test",
-    "id": "test",
-    "category": "foo",
-    "image": "/images/test.png"
+    "name": "Foo",
+    "id": "foo",
+    "projects": [
+      {
+        "name": "Test",
+        "id": "test",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test2",
+        "id": "test2",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test3",
+        "id": "test3",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test4",
+        "id": "test4",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test5",
+        "id": "test5",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test6",
+        "id": "test6",
+        "image": "/images/test.png"
+      }
+    ]
+  },
+  {
+    "name": "Bar",
+    "id": "bar",
+    "projects": [
+      {
+        "name": "Test",
+        "id": "test",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test2",
+        "id": "test2",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test3",
+        "id": "test3",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test4",
+        "id": "test4",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test5",
+        "id": "test5",
+        "image": "/images/test.png"
+      },
+      {
+        "name": "Test6",
+        "id": "test6",
+        "image": "/images/test.png"
+      }
+    ]
   }
 ]

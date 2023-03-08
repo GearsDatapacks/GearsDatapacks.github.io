@@ -1,5 +1,5 @@
 ---
-layout: 'layouts/home.html'
+layout: 'layouts/projects.html'
 title: 'Projects'
 meta:
   desc:
