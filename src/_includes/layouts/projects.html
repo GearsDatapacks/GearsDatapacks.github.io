@@ -12,14 +12,15 @@ layout: 'layouts/base.html'
     <div class="py-8">
       <script webc:type="js" webc:is="template">
         function formatProject(project, category) {
+          const id = project.id || project.name.toLowerCase().replace(' ', '-');
+          const image = project.image || `/images/projects/${id}.png`;
           return `
-          <a href="/projects/${category}/${project.id}">
-            <div class="w-64 h-64 xs:w-80 xs:h-80 bg-blue-900 rounded-3xl transition-transform duration-200 hover:scale-105 hover:shadow-2xl shadow-black">
-              <img src="${project.image}" class="max-h-56"/>
-              <p class="text-center text-3xl font-bold">${project.name}</p>
+          <a href="/projects/${category}/${id}/">
+            <div class="w-64 h-64 xs:w-80 xs:h-80 bg-blue-900 rounded-3xl overflow-hidden transition-transform duration-200 hover:scale-105 hover:shadow-2xl shadow-black">
+              <img src="${image}" alt="${project.name}" class="max-h-56"/>
+              <p class="text-center py-1.5 text-3xl font-bold">${project.name}</p>
             </div>
-          </a>
-          `;
+          </a>`;
         }
 
         projects
