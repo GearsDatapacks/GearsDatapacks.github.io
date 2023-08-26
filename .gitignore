@@ -1,7 +1,7 @@
 # dependecies installed by npm
 node_modules
 
-# build artefacts
+# build artifacts
 _site
 dist
 
