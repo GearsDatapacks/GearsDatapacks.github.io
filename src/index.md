@@ -3,7 +3,7 @@ layout: 'layouts/home.html'
 title: 'Home'
 meta:
   desc:
-    "Gears' Official website"
+    "I am Gears, a software developer and Minecraft YouTuber."
 intro:
   title: 'Hello and welcome to my website!'
   desc:

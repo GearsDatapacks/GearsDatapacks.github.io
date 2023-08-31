@@ -3,7 +3,7 @@ layout: 'layouts/home.html'
 title: 'Contact Me'
 meta:
   desc:
-    "Gears' Official website"
+    "If you have questions you want to ask, or want to reach out to me..."
 intro:
   title: 'Contact me'
   desc:

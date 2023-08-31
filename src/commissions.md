@@ -3,7 +3,7 @@ layout: 'layouts/home.html'
 title: 'Commissions'
 meta:
   desc:
-    "Gears' Official website"
+    "Gears's datapack commissions"
 intro:
   title: 'Datapack commissions'
   desc:
