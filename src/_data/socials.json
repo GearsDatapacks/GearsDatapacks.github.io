@@ -19,6 +19,11 @@
       "name": "Discord",
       "url": "https://discord.gg/fmPKDqf9ze",
       "icon": "/images/discord.png"
+    },
+    {
+      "name": "25% off a Minecraft server",
+      "url": "https://bisecthosting.com/gears",
+      "icon": "/images/bisect-hosting.png"
     }
   ]
 }
