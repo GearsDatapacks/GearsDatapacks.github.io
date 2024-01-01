@@ -41,12 +41,13 @@
 
             if (item.url === page.url) {
               current = 'aria-current="page"';
-              highlight = 'cursor-default border-gray-400 text-gray-400';
+              highlight =
+                'cursor-default border-gray-400 text-gray-400 text-xs lg:text-xl';
               elem = 'span';
             } else {
               current = '';
               highlight =
-                'border-cyan-500 text-cyan-300 hover:underline hover:text-2xl';
+                'border-cyan-500 text-cyan-300 hover:underline text-xs lg:text-xl hover:text-xl hover:lg:text-2xl';
               elem = 'a';
             }
 
