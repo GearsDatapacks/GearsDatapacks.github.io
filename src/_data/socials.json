@@ -11,6 +11,11 @@
       "icon": "/images/github.png"
     },
     {
+      "name": "Bluesky",
+      "url": "https://bsky.app/profile/gearsco.de",
+      "icon": "/images/bluesky.svg"
+    },
+    {
       "name": "Modrinth",
       "url": "https://modrinth.com/user/GearsDatapacks",
       "icon": "/images/modrinth.svg"
@@ -19,11 +24,6 @@
       "name": "Discord",
       "url": "https://discord.gg/fmPKDqf9ze",
       "icon": "/images/discord.png"
-    },
-    {
-      "name": "25% off a Minecraft server",
-      "url": "https://bisecthosting.com/gears",
-      "icon": "/images/bisect-hosting.png"
     }
   ]
 }
