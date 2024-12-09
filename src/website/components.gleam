@@ -31,6 +31,11 @@ pub fn head(page: String) -> Element(a) {
   ])
 }
 
-pub fn page(name: String, body: List(Element(a))) -> Element(a) {
-  html.html([attribute("lang", "en")], [head(name), html.body([], body)])
+pub fn page(name: String, content: List(Element(a))) -> Element(a) {
+  html.html([attribute("lang", "en")], [
+    head(name),
+    html.body([attribute.class("min-h-screen bg-slate-800 text-white")], [
+      html.main([attribute.class("py-24")], content),
+    ]),
+  ])
 }

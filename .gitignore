@@ -2,4 +2,5 @@
 *.ez
 /build
 /priv
+/node_modules
 erl_crash.dump
