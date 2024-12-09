@@ -1,0 +1,47 @@
+:root {
+  font-family: Inter, sans-serif;
+  font-feature-settings: 'liga' 1, 'calt' 1;
+  /* fix for Chrome */
+}
+
+@supports (font-variation-settings: normal) {
+  :root {
+    font-family: InterVariable, sans-serif;
+  }
+}
+
+body {
+  min-height: 100vh;
+  background-color: rgb(30, 41, 59);
+  color: white;
+}
+
+main {
+  padding: 3rem 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  font-weight: bold;
+  text-align: center;
+}
+
+div {
+  margin: auto 0;
+  max-width: 48rem;
+  padding: 1rem;
+}
+
+p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+  font-weight: bold;
+}
