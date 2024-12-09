@@ -1,9 +1,9 @@
 import lustre/attribute.{attribute}
 import lustre/element/html
-import website/components
+import website/component
 
 pub fn view() {
-  components.page("Home", [
+  component.page("Home", [
     html.div([attribute.class("mx-auto max-w-3xl px-4 sm:px-6 lg:px-8")], [
       html.h1(
         [attribute.class("text-3xl font-bold leading-tight text-center")],

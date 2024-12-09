@@ -1,11 +1,12 @@
 import lustre/attribute.{attribute}
 import lustre/element.{type Element}
 import lustre/element/html
+import website/component/header
 
 pub fn head(page: String) -> Element(a) {
   html.head([], [
     html.meta([attribute("charset", "UTF-8")]),
-    html.title([], "Gears | " <> page),
+    html.title([], page <> " | Gears"),
     html.link([attribute.href("/style.css"), attribute.rel("stylesheet")]),
     html.link([attribute.href("https://rsms.me/"), attribute.rel("preconnect")]),
     html.link([
@@ -35,6 +36,7 @@ pub fn page(name: String, content: List(Element(a))) -> Element(a) {
   html.html([attribute("lang", "en")], [
     head(name),
     html.body([attribute.class("min-h-screen bg-slate-800 text-white")], [
+      header.view(name),
       html.main([attribute.class("py-24")], content),
     ]),
   ])
