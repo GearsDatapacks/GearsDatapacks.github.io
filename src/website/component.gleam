@@ -1,3 +1,4 @@
+import website/component/footer
 import lustre/attribute.{attribute}
 import lustre/element.{type Element}
 import lustre/element/html
@@ -38,6 +39,7 @@ pub fn page(name: String, content: List(Element(a))) -> Element(a) {
     html.body([attribute.class("min-h-screen bg-slate-800 text-white")], [
       header.view(name),
       html.main([attribute.class("py-24")], content),
+      footer.view(),
     ]),
   ])
 }
