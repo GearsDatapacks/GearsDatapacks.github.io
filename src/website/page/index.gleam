@@ -4,14 +4,14 @@ import website/component
 
 pub fn view() {
   component.page("Home", [
-    html.div([attribute.class("mx-auto max-w-3xl px-4 sm:px-6 lg:px-8")], [
+    html.div([attribute.class("mx-auto max-w-3xl")], [
       html.h1(
         [attribute.class("text-3xl font-bold leading-tight text-center")],
         [html.text("Hello and welcome to my website!")],
       ),
     ]),
     html.div(
-      [attribute.class("mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 py-8 leading-8")],
+      [attribute.class("mx-auto max-w-4xl py-8 leading-8")],
       [
         html.p([attribute.class("text-xl")], [
           html.text("I am Gears, a software developer and Minecraft YouTuber."),

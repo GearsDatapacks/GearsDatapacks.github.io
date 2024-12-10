@@ -17,6 +17,7 @@ pub fn main() {
   let build =
     ssg.new("./priv")
     |> ssg.add_static_route("/", index.view())
+    |> ssg.add_static_route("/about", about.view())
     |> ssg.add_static_dir("./static")
     // |> ssg.add_static_route("/blog", blog.view(posts.all()))
     // |> ssg.add_dynamic_route("/blog", posts, post.view)
