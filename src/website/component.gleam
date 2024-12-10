@@ -1,7 +1,7 @@
-import website/component/footer
 import lustre/attribute.{attribute}
 import lustre/element.{type Element}
 import lustre/element/html
+import website/component/footer
 import website/component/header
 
 pub fn head(page: String) -> Element(a) {
@@ -40,6 +40,24 @@ pub fn page(name: String, content: List(Element(a))) -> Element(a) {
       header.view(name),
       html.main([attribute.class("py-24")], content),
       footer.view(),
+    ]),
+  ])
+}
+
+pub fn text_page(
+  title: String,
+  header: String,
+  content: List(Element(a)),
+) -> Element(a) {
+  page(title, [
+    html.div([attribute.class("mx-auto max-w-3xl")], [
+      html.h1(
+        [attribute.class("text-3xl font-bold leading-tight text-center")],
+        [html.text(header)],
+      ),
+    ]),
+    html.div([attribute.class("mx-auto max-w-4xl py-8 leading-8")], [
+      html.p([attribute.class("text-xl")], content),
     ]),
   ])
 }
