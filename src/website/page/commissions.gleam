@@ -15,9 +15,7 @@ If you would like me to make you a datapack, please ",
       ],
       [html.text("contact me")],
     ),
-    html.text(
-      ".",
-    ),
+    html.text("."),
     html.span([attribute.class("absolute right-10 bottom-20 text-slate-800")], [
       html.text("Hi :)"),
     ]),

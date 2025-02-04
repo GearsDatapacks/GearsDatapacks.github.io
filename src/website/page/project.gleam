@@ -14,7 +14,9 @@ pub fn view(project: Project) -> Element(a) {
     ]),
     html.div([attribute.class("mx-auto max-w-4xl px-4 sm:px-6 lg:px-8")], [
       html.div([attribute.class("py-8 leading-8")], [
-        html.p([attribute.class("text-xl")], [component.dangerous_html(project.description)]),
+        html.p([attribute.class("text-xl")], [
+          component.dangerous_html(project.description),
+        ]),
       ]),
       component.dangerous_html(project.youtube),
       html.a(
