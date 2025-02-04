@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: 20
       - name: install js dependencies
-        run: npm ci
+        run: npm install tailwindcss
       - name: build
         run: |
           gleam run -m build
