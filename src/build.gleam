@@ -21,7 +21,7 @@ pub fn main() {
     |> ssg.add_static_route("/commissions", commissions.view())
     |> ssg.add_static_route("/contact", contact.view())
     |> ssg.add_static_dir("./static")
-    |> ssg.add_static_route("/projects", projects_page.view(categories))
+    |> ssg.add_static_route("/projects/index", projects_page.view(categories))
     |> add_dynamic_routes(
       categories,
       project.view,
