@@ -14,7 +14,7 @@ target = "javascript"
 # https://gleam.run/writing-gleam/gleam-toml/.
 
 [dependencies]
-gleam_stdlib = ">= 0.44.0 and < 2.0.0"
+gleam_stdlib = ">= 0.44.0 and < 0.54.0"
 lustre = ">= 4.6.3 and < 5.0.0"
 tom = ">= 1.1.0 and < 2.0.0"
 simplifile = ">= 2.2.0 and < 3.0.0"
