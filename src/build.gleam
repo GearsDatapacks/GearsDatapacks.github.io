@@ -17,11 +17,11 @@ pub fn main() {
   let build =
     ssg.new("./priv")
     |> ssg.add_static_route("/", index.view())
-    |> ssg.add_static_route("/about", about.view())
-    |> ssg.add_static_route("/commissions", commissions.view())
-    |> ssg.add_static_route("/contact", contact.view())
+    |> add_static_route("/about", about.view())
+    |> add_static_route("/commissions", commissions.view())
+    |> add_static_route("/contact", contact.view())
     |> ssg.add_static_dir("./static")
-    |> ssg.add_static_route("/projects/index", projects_page.view(categories))
+    |> add_static_route("/projects", projects_page.view(categories))
     |> add_dynamic_routes(
       categories,
       project.view,
@@ -49,4 +49,12 @@ fn add_dynamic_routes(
   use config, element <- list.fold(list, config)
   let #(base, dict) = map_fn(element)
   ssg.add_dynamic_route(config, base, dict, view)
+}
+
+fn add_static_route(
+  config: ssg.Config(a, b, c),
+  route: String,
+  view: Element(d),
+) -> ssg.Config(ssg.HasStaticRoutes, b, c) {
+  ssg.add_static_route(config, route <> "/index", view)
 }
