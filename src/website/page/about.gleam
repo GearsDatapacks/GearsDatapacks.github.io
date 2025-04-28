@@ -5,17 +5,24 @@ import website/component
 pub fn view() {
   component.text_page("About", "About me", [
     html.span([attribute.class("text-2xl font-bold")], [
-      html.text(
-        "I'm Gears; a programmer, Minecraft enthusiast, YouTuber and nerd.",
-      ),
+      html.text("I'm Gears, an amateur software developer, and general nerd."),
     ]),
     html.br([]),
     html.br([]),
     html.text(
-      "The programming language I know most about, and therefore use the most, is JavaScript/TypeScript. However, I also know Ruby, MCFunction and Golang, and dabble in Rust and Python.",
+      "I love programming languages. I am currently part of the core team developing the ",
     ),
+    html.a(
+      [
+        attribute.target("_blank"),
+        attribute.class("text-blue-500 underline"),
+        attribute.href("https://gleam.run"),
+      ],
+      [html.text("Gleam programming language")],
+    ),
+    html.text("."),
     html.br([]),
-    html.text("I make "),
+    html.text("I also used to make "),
     html.a(
       [
         attribute.target("_blank"),
@@ -25,11 +32,11 @@ pub fn view() {
       [html.text("YouTube videos")],
     ),
     html.text(
-      " about my ongoing struggle with Minecraft datapacks, as well as other fun Minecraft content.",
+      " about Minecraft datapacks, and related topics, however that is now inactive. Maybe I'll pick it up again one day.",
     ),
     html.br([]),
     html.text(
-      "Projects I've made include a programming language with Minecraft datapacks (not alone), and a Datapack Package Manager.",
+      "Projects I've made include a programming language with Minecraft datapacks, and a Datapack Package Manager.",
     ),
     html.br([]),
     html.text("More information on the "),
@@ -40,6 +47,6 @@ pub fn view() {
       ],
       [html.text("projects")],
     ),
-    html.text("page."),
+    html.text(" page."),
   ])
 }

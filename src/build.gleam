@@ -5,7 +5,6 @@ import lustre/element.{type Element}
 import lustre/ssg
 import website/data/projects
 import website/page/about
-import website/page/commissions
 import website/page/contact
 import website/page/index
 import website/page/project
@@ -18,7 +17,6 @@ pub fn main() {
     ssg.new("./priv")
     |> ssg.add_static_route("/", index.view())
     |> add_static_route("/about", about.view())
-    |> add_static_route("/commissions", commissions.view())
     |> add_static_route("/contact", contact.view())
     |> ssg.add_static_dir("./static")
     |> add_static_route("/projects", projects_page.view(categories))

@@ -4,7 +4,9 @@ import website/component
 
 pub fn view() {
   component.text_page("Home", "Hello and welcome to my website!", [
-    html.text("I am Gears, a software developer and Minecraft YouTuber."),
+    html.text(
+      "I am Gears, an amateur software developer, investigating functional programming, compilers and Minecraft datapacks.",
+    ),
     html.br([]),
     html.text("More about me in the "),
     html.a([attribute.href("/about/"), attribute.class("underline font-bold")], [
@@ -16,13 +18,6 @@ pub fn view() {
     html.a(
       [attribute.href("/projects/"), attribute.class("underline font-bold")],
       [html.text("projects")],
-    ),
-    html.text("."),
-    html.br([]),
-    html.text("For information on Minecraft datapack commissions, see "),
-    html.a(
-      [attribute.href("/commissions/"), attribute.class("underline font-bold")],
-      [html.text("commissions")],
     ),
     html.text("."),
     html.br([]),

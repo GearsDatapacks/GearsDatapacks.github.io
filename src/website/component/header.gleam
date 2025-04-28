@@ -11,7 +11,6 @@ type PageRoute {
 const pages = [
   PageRoute("About", "/about"),
   PageRoute("Projects", "/projects"),
-  PageRoute("Commissions", "/commissions"),
   PageRoute("Contact me", "/contact"),
 ]
 
