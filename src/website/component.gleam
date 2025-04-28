@@ -63,5 +63,5 @@ pub fn text_page(
 }
 
 pub fn dangerous_html(html: String) -> Element(a) {
-  html.span([attribute.attribute("dangerous-unescaped-html", html)], [])
+  element.unsafe_raw_html("", "span", [], html)
 }
