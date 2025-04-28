@@ -6,7 +6,7 @@ import lustre/element/html
 import website/component
 import website/data/projects.{type Category, type Project}
 
-pub fn view(categories: List(Category)) -> Element(a) {
+pub fn view(categories: List(Category(a))) -> Element(a) {
   component.text_page(
     "Projects",
     "My Projects",
@@ -32,7 +32,11 @@ pub fn view(categories: List(Category)) -> Element(a) {
   )
 }
 
-fn format_project(category: String, id: String, project: Project) -> Element(a) {
+fn format_project(
+  category: String,
+  id: String,
+  project: Project(a),
+) -> Element(a) {
   html.a([attribute.href("/projects/" <> category <> "/" <> id)], [
     html.div(
       [

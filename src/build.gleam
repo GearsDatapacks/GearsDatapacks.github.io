@@ -23,7 +23,7 @@ pub fn main() {
     |> add_dynamic_routes(
       categories,
       project.view,
-      fn(category: projects.Category) {
+      fn(category: projects.Category(a)) {
         #("/projects/" <> category.path, category.projects)
       },
     )

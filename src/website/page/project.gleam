@@ -4,7 +4,7 @@ import lustre/element/html
 import website/component
 import website/data/projects.{type Project}
 
-pub fn view(project: Project) -> Element(a) {
+pub fn view(project: Project(a)) -> Element(a) {
   component.page(project.title, [
     html.div([attribute.class("mx-auto max-w-3xl px-4 sm:px-6 lg:px-8")], [
       html.h1(
@@ -13,11 +13,7 @@ pub fn view(project: Project) -> Element(a) {
       ),
     ]),
     html.div([attribute.class("mx-auto max-w-4xl px-4 sm:px-6 lg:px-8")], [
-      html.div([attribute.class("py-8 leading-8")], [
-        html.p([attribute.class("text-xl")], [
-          component.dangerous_html(project.description),
-        ]),
-      ]),
+      html.div([attribute.class("py-8 leading-8 text-xl")], project.contents),
       component.dangerous_html(project.youtube),
       html.a(
         [
