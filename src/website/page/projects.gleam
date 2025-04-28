@@ -1,6 +1,6 @@
 import gleam/dict
 import gleam/list
-import lustre/attribute.{attribute}
+import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
 import website/component

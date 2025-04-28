@@ -29,15 +29,15 @@ pub fn view(page: String) -> Element(a) {
             [attribute.class("flex flex-shrink-0 items-center space-x-1")],
             [
               html.img([
-                attribute.style([
+                attribute.styles([
                   #("image-rendering", "optimizeSpeed"),
                   #("image-rendering", "pixelated"),
                 ]),
                 attribute.width(64),
                 attribute.height(64),
                 attribute.src("/images/logo.svg"),
-                attribute.class("max-w-none"),
                 attribute.alt("Gears logo"),
+                attribute.class("w-16"),
               ]),
               html.figcaption(
                 [
@@ -50,7 +50,7 @@ pub fn view(page: String) -> Element(a) {
                     svg.path([
                       attribute("d", logo_svg),
                       attribute.class("animate-write"),
-                      attribute.style([
+                      attribute.styles([
                         #("fill", "none"),
                         #("stroke", "#ffffff"),
                         #("stroke-width", "1px"),
@@ -93,7 +93,7 @@ fn nav_bar(current_page: String) -> Element(a) {
                 default_style
                 <> " border-cyan-500 text-cyan-300 ease-linear duration-75 hover:underline text-xs lg:text-xl hover:text-xl hover:lg:text-2xl",
               ),
-              attribute.style([#("transition-property", "font-size")]),
+              attribute.style("transition-property", "font-size"),
               attribute.href(page.url),
             ],
             [element.text(page.name)],

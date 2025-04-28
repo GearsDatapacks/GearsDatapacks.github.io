@@ -1,4 +1,4 @@
-import lustre/attribute.{attribute}
+import lustre/attribute
 import lustre/element/html
 import website/component
 
