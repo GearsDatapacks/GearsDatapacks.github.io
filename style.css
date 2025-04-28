@@ -562,20 +562,8 @@ video {
   position: fixed;
 }
 
-.absolute {
-  position: absolute;
-}
-
-.bottom-20 {
-  bottom: 5rem;
-}
-
 .bottom-3 {
   bottom: 0.75rem;
-}
-
-.right-10 {
-  right: 2.5rem;
 }
 
 .right-3 {
@@ -861,11 +849,6 @@ video {
 .text-orange-400 {
   --tw-text-opacity: 1;
   color: rgb(251 146 60 / var(--tw-text-opacity, 1));
-}
-
-.text-slate-800 {
-  --tw-text-opacity: 1;
-  color: rgb(30 41 59 / var(--tw-text-opacity, 1));
 }
 
 .text-white {
