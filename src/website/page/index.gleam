@@ -5,7 +5,7 @@ import website/component
 pub fn view() {
   component.text_page("Home", "Hello and welcome to my website!", [
     html.text(
-      "I am Gears, an amateur software developer, investigating functional programming, compilers and Minecraft datapacks.",
+      "My name is Surya, known online as Gears. I'm an amateur software developer, investigating functional programming, compilers and Minecraft datapacks.",
     ),
     html.br([]),
     html.text("More about me in the "),

@@ -4,10 +4,9 @@ import website/component
 
 pub fn view() {
   component.text_page("About", "About me", [
-    html.span([attribute.class("text-2xl font-bold")], [
+    html.span([attribute.class("font-bold")], [
       html.text("I'm Gears, an amateur software developer, and general nerd."),
     ]),
-    html.br([]),
     html.br([]),
     html.text(
       "I love programming languages. I am currently part of the core team developing the ",
@@ -15,24 +14,24 @@ pub fn view() {
     html.a(
       [
         attribute.target("_blank"),
-        attribute.class("text-blue-500 underline"),
+        attribute.class("font-bold hover:underline"),
         attribute.href("https://gleam.run"),
       ],
       [html.text("Gleam programming language")],
     ),
     html.text("."),
     html.br([]),
-    html.text("I also used to make "),
+    html.text("I also have a "),
     html.a(
       [
         attribute.target("_blank"),
-        attribute.class("text-blue-500 underline"),
+        attribute.class("font-bold hover:underline"),
         attribute.href("https://youtube.com/@Gearsdatapacks"),
       ],
-      [html.text("YouTube videos")],
+      [html.text("YouTube channel")],
     ),
     html.text(
-      " about Minecraft datapacks, and related topics, however that is now inactive. Maybe I'll pick it up again one day.",
+      ", where I you can watch my old videos on Minecraft datapacks, as well as videos covering changes to Gleam.",
     ),
     html.br([]),
     html.text(
