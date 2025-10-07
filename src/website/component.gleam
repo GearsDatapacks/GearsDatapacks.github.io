@@ -1,3 +1,4 @@
+import gleam/list
 import lustre/attribute.{attribute}
 import lustre/element.{type Element}
 import lustre/element/html
@@ -33,23 +34,26 @@ pub fn head(page: String) -> Element(a) {
   ])
 }
 
-pub fn page(name: String, content: List(Element(a))) -> Element(a) {
+pub type Section(a) {
+  Section(content: List(Element(a)))
+}
+
+pub fn page(name: String, sections: List(Section(a))) -> Element(a) {
   html.html([attribute("lang", "en")], [
     head(name),
     html.body([attribute.class("min-h-screen bg-slate-800 text-white")], [
-      header.view(name),
-      html.main([attribute.class("py-24")], content),
+      header.view(),
+      html.main(
+        [attribute.class("py-24")],
+        list.flat_map(sections, fn(section) { section.content }),
+      ),
       footer.view(),
     ]),
   ])
 }
 
-pub fn text_page(
-  title: String,
-  header: String,
-  content: List(Element(a)),
-) -> Element(a) {
-  page(title, [
+pub fn text_page(header: String, content: List(Element(a))) -> Section(a) {
+  Section([
     html.div([attribute.class("mx-auto max-w-3xl")], [
       html.h1(
         [attribute.class("text-3xl font-bold leading-tight text-center")],

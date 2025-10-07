@@ -3,7 +3,7 @@ import lustre/element/html
 import website/component
 
 pub fn view() {
-  component.text_page("Contact me", "Contact me", [
+  component.text_page("Contact me", [
     html.text(
       "If you have questions you want to ask, or want to reach out to me, you can send me an email at ",
     ),

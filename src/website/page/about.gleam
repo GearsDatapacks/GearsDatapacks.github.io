@@ -3,7 +3,7 @@ import lustre/element/html
 import website/component
 
 pub fn view() {
-  component.text_page("About", "About me", [
+  component.text_page("About me", [
     html.span([attribute.class("font-bold")], [
       html.text("I'm Gears, an amateur software developer, and general nerd."),
     ]),
