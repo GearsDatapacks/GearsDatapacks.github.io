@@ -55,11 +55,62 @@ pub fn view() -> Element(a) {
 
 pub fn my_stuff() {
   component.text_page("My Stuff", [
-    html.h2([attribute.class("text-2xl font-bold leading-tight")], [
+    html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
       element.text("Links"),
     ]),
     html.p([], list.map(footer.socials, social)),
+    html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
+      element.text("Talks"),
+    ]),
+    html.p([], list.flat_map(talks, talk)),
   ])
+}
+
+const talks = [
+  Talk(
+    description: "Six to Sixteen: A Child's Programming Journey (Upcoming)",
+    url: "https://2025.ffconf.org/surya",
+    date: "14 November, 2025",
+    conference: "FFConf 2025",
+    location: "Duke of York's Cinema, Brighton",
+  ),
+  Talk(
+    description: "Gleam core team panel (Upcoming)",
+    url: "https://gleamgathering.com/#speakers",
+    date: "21 February, 2026",
+    conference: "Gleam Gathering",
+    location: "Origin Workspace, Bristol",
+  ),
+]
+
+type Talk {
+  Talk(
+    description: String,
+    url: String,
+    date: String,
+    conference: String,
+    location: String,
+  )
+}
+
+fn talk(talk: Talk) -> List(Element(a)) {
+  [
+    html.a(
+      [
+        attribute.href(talk.url),
+        attribute.target("_blank"),
+        attribute.class("font-bold hover:underline text-xl"),
+      ],
+      [
+        element.text(talk.description),
+      ],
+    ),
+    html.br([]),
+    element.text(
+      talk.date <> " - " <> talk.conference <> " - " <> talk.location,
+    ),
+    html.br([]),
+  ]
 }
 
 fn social(social: footer.Social) -> Element(a) {
