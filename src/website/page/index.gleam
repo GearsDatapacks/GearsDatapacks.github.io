@@ -36,27 +36,14 @@ fn index() {
     ),
     html.br([]),
     html.br([]),
-    html.text(
-      "If you have questions you want to ask, or want to reach out to me, you can send me an email at ",
-    ),
-    html.a(
-      [
-        attribute.class("font-bold text-orange-400"),
-        attribute.href("mailto:gearsOfficial@proton.me"),
-      ],
-      [html.text("gearsOfficial@proton.me")],
-    ),
-    html.text(
-      ",
-    or join my ",
-    ),
+    html.text("If you like what I do and want to support my work, you can "),
     html.a(
       [
         attribute.target("_blank"),
         attribute.class("font-bold hover:underline"),
-        attribute.href("https://discord.gg/fmPKDqf9ze"),
+        attribute.href("https://github.com/sponsors/GearsDatapacks"),
       ],
-      [html.text("Discord server")],
+      [html.text("sponsor me on GitHub")],
     ),
     html.text("."),
   ])
