@@ -27,6 +27,12 @@ pub const socials = [
     description: "Random social media posting",
   ),
   Social(
+    icon: "twitch.png",
+    name: "Twitch",
+    url: "https://twitch.tv/gearsdatapacks",
+    description: "Occasional programming livestreams",
+  ),
+  Social(
     icon: "modrinth.svg",
     name: "Modrinth",
     url: "https://modrinth.com/user/GearsDatapacks",
