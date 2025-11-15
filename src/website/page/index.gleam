@@ -15,7 +15,7 @@ fn index() {
     html.a(
       [
         attribute.target("_blank"),
-        attribute.class("font-bold hover:underline"),
+        attribute.class("font-bold underline"),
         attribute.href("https://gleam.run"),
       ],
       [html.text("Gleam programming language")],
@@ -26,7 +26,7 @@ fn index() {
     html.a(
       [
         attribute.target("_blank"),
-        attribute.class("font-bold hover:underline"),
+        attribute.class("font-bold underline"),
         attribute.href("https://youtube.com/@Gearsdatapacks"),
       ],
       [html.text("YouTube channel")],
@@ -40,7 +40,7 @@ fn index() {
     html.a(
       [
         attribute.target("_blank"),
-        attribute.class("font-bold hover:underline"),
+        attribute.class("font-bold underline"),
         attribute.href("https://github.com/sponsors/GearsDatapacks"),
       ],
       [html.text("sponsor me on GitHub")],
