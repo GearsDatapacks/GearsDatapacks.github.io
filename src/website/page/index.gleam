@@ -62,20 +62,27 @@ pub fn my_stuff() {
     html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
       element.text("Talks"),
     ]),
-    html.p([], list.flat_map(talks, talk)),
+    ..list.map(talks, talk)
   ])
 }
 
 const talks = [
   Talk(
-    description: "Six to Sixteen: A Child's Programming Journey (Upcoming)",
+    description: "Six to Sixteen: A Child's Programming Journey (Recording coming soon)",
     url: "https://2025.ffconf.org/surya",
     date: "14 November, 2025",
     conference: "FFConf 2025",
     location: "Duke of York's Cinema, Brighton",
   ),
   Talk(
-    description: "Gleam core team panel (Upcoming)",
+    description: "Optimising the hell out of Gleam (Upcoming)",
+    url: "https://gleamgathering.com/#speakers",
+    date: "21 February, 2026",
+    conference: "Gleam Gathering",
+    location: "Origin Workspace, Bristol",
+  ),
+  Talk(
+    description: "Panel: Chat with Gleam core team (Upcoming)",
     url: "https://gleamgathering.com/#speakers",
     date: "21 February, 2026",
     conference: "Gleam Gathering",
@@ -93,8 +100,8 @@ type Talk {
   )
 }
 
-fn talk(talk: Talk) -> List(Element(a)) {
-  [
+fn talk(talk: Talk) -> Element(a) {
+  html.p([attribute.class("my-3")], [
     html.a(
       [
         attribute.href(talk.url),
@@ -110,7 +117,7 @@ fn talk(talk: Talk) -> List(Element(a)) {
       talk.date <> " - " <> talk.conference <> " - " <> talk.location,
     ),
     html.br([]),
-  ]
+  ])
 }
 
 fn social(social: footer.Social) -> Element(a) {
