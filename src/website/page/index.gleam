@@ -3,7 +3,6 @@ import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
 import website/component
-import website/component/footer
 
 fn index() {
   component.text_page("Hello and welcome to my website!", [
@@ -58,7 +57,7 @@ pub fn my_stuff() {
     html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
       element.text("Links"),
     ]),
-    html.p([], list.map(footer.socials, social)),
+    html.p([], list.map(socials, social)),
     html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
       element.text("Talks"),
     ]),
@@ -87,6 +86,55 @@ const talks = [
     date: "21 February, 2026",
     conference: "Gleam Gathering",
     location: "Origin Workspace, Bristol",
+  ),
+]
+
+type Social {
+  Social(icon: String, name: String, url: String, description: String)
+}
+
+const socials = [
+  Social(
+    icon: "youtube.png",
+    name: "YouTube",
+    url: "https://youtube.com/@GearsDatapacks",
+    description: "Videos on Minecraft Datapacks and Gleam",
+  ),
+  Social(
+    icon: "github.png",
+    name: "Github",
+    url: "https://github.com/GearsDatapacks",
+    description: "All my projects",
+  ),
+  Social(
+    icon: "bluesky.svg",
+    name: "Bluesky",
+    url: "https://bsky.app/profile/gearsco.de",
+    description: "Random social media posting",
+  ),
+  Social(
+    icon: "twitch.png",
+    name: "Twitch",
+    url: "https://twitch.tv/gearsdatapacks",
+    description: "Occasional programming livestreams",
+  ),
+  Social(
+    icon: "modrinth.svg",
+    name: "Modrinth",
+    url: "https://modrinth.com/user/GearsDatapacks",
+    description: "Minecraft datapacks",
+  ),
+  Social(
+    icon: "discord.png",
+    name: "Discord",
+    url: "https://discord.gg/fmPKDqf9ze",
+    description: "Discord Server",
+  ),
+  Social(
+    icon: "hex.png",
+    name: "Hex",
+    url: "https://hex.pm/users/Gears",
+    description: "Gleam libraries",
   ),
 ]
 
@@ -120,7 +168,7 @@ fn talk(talk: Talk) -> Element(a) {
   ])
 }
 
-fn social(social: footer.Social) -> Element(a) {
+fn social(social: Social) -> Element(a) {
   html.a([attribute.href(social.url), attribute.target("_blank")], [
     html.img([
       attribute.src("/images/" <> social.icon),
