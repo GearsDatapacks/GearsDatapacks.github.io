@@ -1,24 +1,11 @@
-# website
+# Gears' Website
 
-[![Package Version](https://img.shields.io/hexpm/v/website)](https://hex.pm/packages/website)
-[![Hex Docs](https://img.shields.io/badge/hex-docs-ffaff3)](https://hexdocs.pm/website/)
+Code for [my website](https://gearsco.de), written in [Gleam](https://gleam.run),
+using [Lustre](https://lustre.build) and [Lustre SSG](https://hexdocs.pm/lustre_ssg).
 
-```sh
-gleam add website@1
-```
-```gleam
-import website
+I have recently restructured the website from a multi-page site to an SPA, so for
+now Lustre SSG is overkill for what I need, and the codebase is a little messy.
+I do want to eventually make a blog and other pages for this site, so at some point
+it will get another rewrite.
 
-pub fn main() {
-  // TODO: An example of the project in use
-}
-```
-
-Further documentation can be found at <https://hexdocs.pm/website>.
-
-## Development
-
-```sh
-gleam run   # Run the project
-gleam test  # Run the tests
-```
+For an example of Gleam/Lustre SSG, see: https://github.com/giacomocavalieri/giacomocavalieri.me
