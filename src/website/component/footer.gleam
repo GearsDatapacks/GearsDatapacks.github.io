@@ -30,6 +30,20 @@ pub fn view() -> Element(a) {
           element.text("Gleam"),
         ],
       ),
+      html.br([]),
+      element.text("Source: "),
+      html.a(
+        [
+          attribute.href(
+            "https://github.com/GearsDatapacks/GearsDatapacks.github.io",
+          ),
+          attribute.target("_blank"),
+          attribute.class("underline"),
+        ],
+        [
+          element.text("GitHub"),
+        ],
+      ),
     ],
   )
 }
