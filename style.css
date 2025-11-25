@@ -570,6 +570,10 @@ video {
   right: 1.25rem;
 }
 
+.m-0 {
+  margin: 0px;
+}
+
 .m-1 {
   margin: 0.25rem;
 }
@@ -728,6 +732,16 @@ video {
   line-height: 2.5rem;
 }
 
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+}
+
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
@@ -752,6 +766,69 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+h2 {
+  font-size: x-large;
+  font-weight: bold;
+}
+
+p {
+  margin: 0.7rem 0;
+  line-height: 1.5rem;
+}
+
+p>code,
+a>code {
+  background-color: rgb(7, 0, 49);
+  padding: 0.1rem 0.2rem;
+  color: #ffaff3;
+  border-radius: 0.2rem;
+}
+
+pre {
+  background-color: rgb(15, 15, 15);
+  padding: 1rem;
+  overflow-y: auto;
+  border-radius: .4rem;
+  margin: 1rem 0;
+}
+
+pre code .hl-comment {
+  color: #d4d4d4;
+  font-style: italic
+}
+
+pre code .hl-function {
+  color: #9ce7ff
+}
+
+pre code .hl-keyword {
+  color: #ffd596
+}
+
+pre code .hl-module {
+  color: #ffddfa
+}
+
+pre code .hl-operator {
+  color: #ffaff3
+}
+
+pre code .hl-string {
+  color: #c8ffa7
+}
+
+pre code .hl-number {
+  color: #c8ffa7
+}
+
+pre code .hl-atom {
+  color: #c8ffa7
+}
+
+pre code .hl-variant {
+  color: #ffddfa
 }
 
 .hover\:underline:hover {
