@@ -1,11 +1,18 @@
+import contour
 import gleam/bool
 import gleam/dict.{type Dict}
 import gleam/list
+import gleam/option
 import gleam/string
+import jot
+import lustre/attribute.{attribute}
 import lustre/element
+import lustre/element/html
 import lustre/ssg/djot
+import pearl
 import simplifile
 import tom.{type Toml}
+import website/component
 
 pub fn posts() -> List(Post(a)) {
   let assert Ok(files) = simplifile.read_directory("blog/")
@@ -16,7 +23,7 @@ pub fn posts() -> List(Post(a)) {
     let assert Ok(contents) = simplifile.read(file_path)
 
     let assert Ok(metadata) = djot.metadata(contents)
-    let contents = djot.render(contents, djot.default_renderer())
+    let contents = djot.render(contents, renderer())
 
     let title = get_string_key(metadata, "title")
     let description = get_string_key(metadata, "description")
@@ -26,6 +33,71 @@ pub fn posts() -> List(Post(a)) {
 
     Ok(Post(title:, slug:, date:, contents:, description:))
   })
+}
+
+fn renderer() -> djot.Renderer(element.Element(a)) {
+  let default = djot.default_renderer()
+  djot.Renderer(
+    ..default,
+    link: fn(destination, references, content) {
+      case destination {
+        jot.Reference(ref) ->
+          case dict.get(references, ref) {
+            Ok(url) ->
+              html.a(
+                [
+                  attribute.href(url),
+                  attribute.target(target(url)),
+                  attribute.class("underline"),
+                ],
+                content,
+              )
+            Error(_) ->
+              html.a(
+                [
+                  attribute.href("#" <> ref),
+                  attribute.id("back-to-" <> ref),
+                ],
+                content,
+              )
+          }
+        jot.Url(url) ->
+          html.a(
+            [
+              attribute.href(url),
+              attribute.target(target(url)),
+              attribute.class("underline"),
+            ],
+            content,
+          )
+      }
+    },
+    codeblock: fn(attrs, lang, code) {
+      let lang = option.unwrap(lang, "text")
+
+      let code = case lang {
+        "erlang" | "erl" -> component.dangerous_html(pearl.highlight_html(code))
+        "gleam" -> component.dangerous_html(contour.to_html(code))
+        _ -> html.text(code)
+      }
+
+      html.pre(
+        dict.fold(attrs, [], fn(attrs, name, value) {
+          [attribute(name, value), ..attrs]
+        }),
+        [
+          html.code([attribute("data-lang", lang)], [code]),
+        ],
+      )
+    },
+  )
+}
+
+fn target(url: String) -> String {
+  case url {
+    "https://" <> _ | "http://" <> _ -> "_blank"
+    _ -> ""
+  }
 }
 
 fn get_string_key(toml: Dict(String, Toml), key: String) -> String {

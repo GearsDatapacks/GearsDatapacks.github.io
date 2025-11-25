@@ -60,9 +60,7 @@ pub fn text_page(header: String, content: List(Element(a))) -> Section(a) {
         [html.text(header)],
       ),
     ]),
-    html.div([attribute.class("mx-auto max-w-4xl py-8 leading-8")], [
-      html.p([attribute.class("text-xl")], content),
-    ]),
+    html.div([attribute.class("mx-auto max-w-4xl py-8 leading-8")], content),
   ])
 }
 

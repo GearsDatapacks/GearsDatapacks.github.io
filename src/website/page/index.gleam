@@ -6,45 +6,52 @@ import website/component
 
 fn index() {
   component.text_page("Hello and welcome to my website!", [
-    html.text(
-      "My name is Surya, known online as Gears. I'm an amateur software developer, investigating functional programming, compilers and Minecraft datapacks.",
-    ),
-    html.br([]),
-    html.text("I am currently part of the core team developing the "),
-    html.a(
+    html.p(
       [
-        attribute.target("_blank"),
-        attribute.class("font-bold underline"),
-        attribute.href("https://gleam.run"),
+        attribute.class("text-xl"),
       ],
-      [html.text("Gleam programming language")],
-    ),
-    html.text("."),
-    html.br([]),
-    html.text("I also have a "),
-    html.a(
       [
-        attribute.target("_blank"),
-        attribute.class("font-bold underline"),
-        attribute.href("https://youtube.com/@Gearsdatapacks"),
+        html.text(
+          "My name is Surya, known online as Gears. I'm an amateur software developer, investigating functional programming, compilers and Minecraft datapacks.",
+        ),
+        html.br([]),
+        html.text("I am currently part of the core team developing the "),
+        html.a(
+          [
+            attribute.target("_blank"),
+            attribute.class("font-bold underline"),
+            attribute.href("https://gleam.run"),
+          ],
+          [html.text("Gleam programming language")],
+        ),
+        html.text("."),
+        html.br([]),
+        html.text("I also have a "),
+        html.a(
+          [
+            attribute.target("_blank"),
+            attribute.class("font-bold underline"),
+            attribute.href("https://youtube.com/@Gearsdatapacks"),
+          ],
+          [html.text("YouTube channel")],
+        ),
+        html.text(
+          ", where I you can watch my old videos on Minecraft datapacks, as well as videos covering changes to Gleam.",
+        ),
+        html.br([]),
+        html.br([]),
+        html.text("If you like what I do and want to support my work, you can "),
+        html.a(
+          [
+            attribute.target("_blank"),
+            attribute.class("font-bold underline"),
+            attribute.href("https://github.com/sponsors/GearsDatapacks"),
+          ],
+          [html.text("sponsor me on GitHub")],
+        ),
+        html.text("."),
       ],
-      [html.text("YouTube channel")],
     ),
-    html.text(
-      ", where I you can watch my old videos on Minecraft datapacks, as well as videos covering changes to Gleam.",
-    ),
-    html.br([]),
-    html.br([]),
-    html.text("If you like what I do and want to support my work, you can "),
-    html.a(
-      [
-        attribute.target("_blank"),
-        attribute.class("font-bold underline"),
-        attribute.href("https://github.com/sponsors/GearsDatapacks"),
-      ],
-      [html.text("sponsor me on GitHub")],
-    ),
-    html.text("."),
   ])
 }
 
