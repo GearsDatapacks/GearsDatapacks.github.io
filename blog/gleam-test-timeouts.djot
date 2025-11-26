@@ -1,5 +1,5 @@
 ---
-title = "Test timeouts in Gleam"
+title = "Test Timeouts in Gleam"
 date = "2025-11-25"
 description = "By default, Gleam tests come with a timeout of 5 seconds. It's not as easy as you might think to remove it."
 ---
@@ -12,26 +12,23 @@ If you don't care about the backstory and just want to know the answer, you can
 When you create a new Gleam project, there are two dependencies that are added
 automatically by the build tool. These are [`gleam_stdlib`](https://hexdocs.pm/gleam_stdlib),
 the Gleam standard library, and [`gleeunit`](https://hexdocs.pm/gleeunit), the
-default test runner for Gleam.
+default test runner for Gleam. Both of these dependencies are technically optional,
+but they are added by default to make it easier to start a new project, since
+most projects use them.
 
-Both of these dependencies are technically optional, but they are added by default
-to make it easier to start a new project, since most projects use both the above
-packages.
-
-See, when you run `gleam test` in the terminal, while it may seem that the Gleam
+See, when you run `gleam test` in the terminal, while it may seem like the Gleam
 build tool finds all your test functions magically, all it's really doing is calling
 the `main` function of the module named `$PROJECT_test`, which by default calls
-out to `gleeunit`, which is the code that's really in charge of running your tests.
+out to `gleeunit`, the code that's really in charge of running your tests.
 
 ## What is gleeunit?
 
 On the Erlang target, the `gleeunit` library is a thin wrapper for
 [`EUnit`](https://www.erlang.org/doc/apps/eunit/chapter.html), which is a test
 runner built into OTP. On JavaScript, `gleeunit` implements a custom test runner
-that has similar (but not identical) features to `EUnit`.
-
-Somewhat unfortunately, EUnit comes with a default timeout of 5 seconds, and
-seemingly [no way to globally adjust it](https://github.com/lpil/gleeunit/issues/51)
+that has similar (but not identical) features to EUnit. Somewhat unfortunately,
+EUnit comes with a default timeout of 5 seconds, and seemingly
+[no way to globally adjust it](https://github.com/lpil/gleeunit/issues/51),
 so if any test runs for longer than that it is immediately terminated.
 
 EUnit has a somewhat unconventional API. As the default Gleam project explains,
@@ -39,7 +36,7 @@ it runs all public functions whose names end in `_test`. But there's a second
 more obscure API, in the form of *test generators*.
 
 Test generators are another kind of EUnit test. Test generator functions end
-in `*_test_` (note the trailing underscore), and they have the ability to configure
+in `_test_` (note the trailing underscore), and they have the ability to configure
 various parts of how EUnit runs. It's detailed in the EUnit documentation,
 but here we will just cover the most commonly used one, which is the timeout.
 
