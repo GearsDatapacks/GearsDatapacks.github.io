@@ -3,6 +3,7 @@ import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
 import website/component
+import website/data/blog
 
 fn index() {
   component.text_page("Hello and welcome to my website!", [
@@ -55,20 +56,45 @@ fn index() {
   ])
 }
 
-pub fn view() -> Element(a) {
-  component.page("Home", [index(), my_stuff()])
+pub fn view(posts: List(blog.Post(_))) -> Element(_) {
+  component.page("Home", [index(), my_stuff(posts)])
 }
 
-pub fn my_stuff() {
-  component.text_page("My Stuff", [
-    html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
-      element.text("Links"),
+pub fn my_stuff(posts: List(blog.Post(_))) -> component.Section(_) {
+  component.text_page(
+    "My Stuff",
+    list.flatten([
+      [
+        html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
+          element.text("Links"),
+        ]),
+        html.p([], list.map(socials, social)),
+        html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
+          element.text("Posts"),
+        ]),
+      ],
+      list.map(posts, post),
+      [
+        html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
+          element.text("Talks"),
+        ]),
+      ],
+      list.map(talks, talk),
     ]),
-    html.p([], list.map(socials, social)),
-    html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
-      element.text("Talks"),
-    ]),
-    ..list.map(talks, talk)
+  )
+}
+
+fn post(post: blog.Post(_)) -> element.Element(_) {
+  html.div([attribute.class("")], [
+    html.a(
+      [
+        attribute.href("/blog/" <> post.slug),
+        attribute.class("text-xl font-bold hover:underline"),
+      ],
+      [html.text(post.title)],
+    ),
+    html.p([attribute.class("text-sm m-0")], [element.text(post.date)]),
+    html.p([attribute.class("text-md my-0.5")], [element.text(post.description)]),
   ])
 }
 

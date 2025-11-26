@@ -3,7 +3,6 @@ import gleam/list
 import lustre/element
 import lustre/ssg
 import website/data/blog
-import website/page/blog_home
 import website/page/blog_post
 import website/page/index
 
@@ -12,9 +11,8 @@ pub fn main() {
 
   let build =
     ssg.new("./priv")
-    |> ssg.add_static_route("/", index.view())
+    |> ssg.add_static_route("/", index.view(posts))
     |> ssg.add_static_dir("./static")
-    |> ssg.add_static_route("/blog/index", blog_home.view(posts))
     |> add_dynamic_routes(
       "/blog",
       posts,
