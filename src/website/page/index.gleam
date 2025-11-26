@@ -93,8 +93,10 @@ fn post(post: blog.Post(_)) -> element.Element(_) {
       ],
       [html.text(post.title)],
     ),
-    html.p([attribute.class("text-sm m-0")], [element.text(post.date)]),
-    html.p([attribute.class("text-md my-0.5")], [element.text(post.description)]),
+    // html.p([attribute.class("text-sm m-0")], [element.text(post.date)]),
+    html.p([attribute.class("text-md my-0.5")], [
+      element.text(post.date <> " - " <> post.description),
+    ]),
   ])
 }
 
