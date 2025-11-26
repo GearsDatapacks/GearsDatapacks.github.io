@@ -8,7 +8,7 @@ pub fn view() -> Element(a) {
     html.nav(
       [
         attribute.class(
-          "flex h-16 grow items-center justify-between gap-4 px-4 text-white",
+          "flex h-16 grow items-center justify-between gap-4 px-4 text-white overflow-hidden",
         ),
       ],
       [
