@@ -44,7 +44,7 @@ pub fn page(name: String, sections: List(Section(a))) -> Element(a) {
     html.body([attribute.class("min-h-screen bg-slate-800 text-white")], [
       header.view(),
       html.main(
-        [attribute.class("py-24")],
+        [attribute.class("py-2")],
         list.flat_map(sections, fn(section) { section.content }),
       ),
       footer.view(),
