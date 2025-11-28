@@ -67,15 +67,14 @@ pub fn text_page(header: String, content: List(Element(a))) -> Section(a) {
   ])
 }
 
-pub fn dangerous_html(html: String) -> Element(_) {
+pub fn raw_html(html: String) -> Element(_) {
   element.unsafe_raw_html("", "span", [], html)
 }
 
 pub fn code_block(language: Option(String), code_text: String) -> Element(_) {
   let code = case language {
-    Some("erlang") | Some("erl") ->
-      dangerous_html(pearl.highlight_html(code_text))
-    Some("gleam") -> dangerous_html(contour.to_html(code_text))
+    Some("erlang") | Some("erl") -> raw_html(pearl.highlight_html(code_text))
+    Some("gleam") -> raw_html(contour.to_html(code_text))
     _ -> html.text(code_text)
   }
 

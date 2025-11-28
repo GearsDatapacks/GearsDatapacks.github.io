@@ -5,7 +5,7 @@ description = "By default, Gleam tests come with a timeout of 5 seconds. It's no
 ---
 
 If you don't care about the backstory and just want to know the answer, you can
-[skip there](#How-do-I-configure-my-test-timeout).
+[skip there](#how-do-i-configure-my-test-timeout).
 
 ## How Gleam tests work
 
@@ -33,7 +33,7 @@ so if any test runs for longer than that it is immediately terminated.
 
 EUnit has a somewhat unconventional API. As the default Gleam project explains,
 it runs all public functions whose names end in `_test`. But there's a second
-more obscure API, in the form of *test generators*.
+more obscure API, in the form of **test generators**.
 
 Test generators are another kind of EUnit test. Test generator functions end
 in `_test_` (note the trailing underscore), and they have the ability to configure

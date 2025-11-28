@@ -1,47 +1,38 @@
+import filepath as path
 import gleam/io
 import gleam/list
 import lustre/element
-import lustre/ssg
+import simplifile as file
 import website/data/blog
 import website/page/blog_post
 import website/page/index
 
+const out_dir = "./priv"
+
 pub fn main() {
   let posts = blog.posts()
 
-  let build =
-    ssg.new("./priv")
-    |> ssg.add_static_route("/", index.view(posts))
-    |> ssg.add_static_dir("./static")
-    |> add_dynamic_routes(
-      "/blog",
-      posts,
-      fn(post) { post.slug },
-      blog_post.view,
-    )
-    |> ssg.build
+  let assert Ok(Nil) = file.delete(out_dir)
+  let assert Ok(Nil) = file.copy_directory("./static", out_dir)
+  create_page("/", index.view(posts))
+  list.each(posts, fn(post) {
+    create_page("blog/" <> post.slug, blog_post.view(post))
+  })
 
-  case build {
-    Ok(_) -> io.println("Build succeeded!")
-    Error(e) -> {
-      echo e
-      io.println("Build failed!")
-    }
-  }
+  io.println("Build succeeded!")
 }
 
-fn add_dynamic_routes(
-  config: ssg.Config(ssg.HasStaticRoutes, a, b),
-  path: String,
-  list: List(data),
-  slug: fn(data) -> String,
-  view: fn(data) -> element.Element(msg),
-) -> ssg.Config(ssg.HasStaticRoutes, a, b) {
-  list.fold(list, config, fn(config, data) {
-    ssg.add_static_route(
-      config,
-      path <> "/" <> slug(data) <> "/index",
-      view(data),
-    )
-  })
+fn create_page(path: String, element: element.Element(a)) -> Nil {
+  let path = case path {
+    "/" <> path -> path
+    _ -> path
+  }
+  let path = out_dir |> path.join(path) |> path.join("index.html")
+  write_file(path, element.to_document_string(element))
+}
+
+fn write_file(to path: String, write contents: String) -> Nil {
+  let assert Ok(Nil) = file.create_directory_all(path.directory_name(path))
+  let assert Ok(Nil) = file.write(contents, to: path)
+  Nil
 }
