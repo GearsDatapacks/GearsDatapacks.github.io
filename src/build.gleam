@@ -12,7 +12,14 @@ const out_dir = "./priv"
 pub fn main() {
   let posts = blog.posts()
 
-  let assert Ok(Nil) = file.delete(out_dir)
+  case file.is_directory(out_dir) {
+    Ok(True) -> {
+      let assert Ok(Nil) = file.delete(out_dir)
+      Nil
+    }
+    Ok(False) -> Nil
+    Error(_) -> panic
+  }
   let assert Ok(Nil) = file.copy_directory("./static", out_dir)
   create_page("/", index.view(posts))
   list.each(posts, fn(post) {
