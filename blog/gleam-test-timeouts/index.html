@@ -21,34 +21,56 @@ in <code>_test_</code> (note the trailing underscore), and they have the ability
 various parts of how EUnit runs. It&#39;s detailed in the EUnit documentation,
 but here we will just cover the most commonly used one, which is the timeout.</p><h2 id="How-do-I-configure-my-test-timeout">How do I configure my test timeout?</h2><p>EUnit test generators allow returning extra values along with a function to call
 in order to configure it. In Erlang syntax, here is how you would configure the
-timeout for your test, to be 60 seconds instead of 5:</p><pre><code data-lang="erlang"><span><span class=hl-function>something_test_</span><span class=hl-punctuation>(</span><span class=hl-punctuation>)</span> <span class=hl-punctuation>-&gt;</span>
+timeout for your test, to be 60 seconds instead of 5:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`something_test_() -&gt;
+  {timeout, 60, fun () -&gt; 
+    ... % The actual body of your test 
+  }.
+`)">copy</button><pre><code data-lang="erlang"><span><span class=hl-function>something_test_</span><span class=hl-punctuation>(</span><span class=hl-punctuation>)</span> <span class=hl-punctuation>-&gt;</span>
   <span class=hl-punctuation>{</span><span class=hl-atom>timeout</span><span class=hl-punctuation>,</span> <span class=hl-number>60</span><span class=hl-punctuation>,</span> <span class=hl-keyword>fun</span> <span class=hl-punctuation>(</span><span class=hl-punctuation>)</span> <span class=hl-punctuation>-&gt;</span> 
     <span class=hl-punctuation>...</span> <span class=hl-comment>% The actual body of your test 
 </span>  <span class=hl-punctuation>}</span><span class=hl-punctuation>.</span>
-</span></code></pre><p>So, what does this translate to Gleam? Well, there are actually two ways to do it.
+</span></code></pre></div><p>So, what does this translate to Gleam? Well, there are actually two ways to do it.
 The first is to use the <code>atom.create</code> function from the <a class="underline" href="https://hexdocs.pm/gleam_erlang" target="_blank"><code>gleam_erlang</code></a>
-library. This creates basically the same as the Erlang code:</p><pre><code data-lang="gleam"><span><span class=hl-keyword>import</span> <span class=hl-module>gleam/erlang/atom</span>
+library. This creates basically the same as the Erlang code:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`import gleam/erlang/atom
+
+pub fn something_test_() {
+  #(atom.create(&quot;timeout&quot;), 60, fn() {
+    ... // The actual body of your test
+  })
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-keyword>import</span> <span class=hl-module>gleam/erlang/atom</span>
 
 <span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>something_test_</span>() {
   #(<span class=hl-module>atom</span>.<span class=hl-function>create</span>(<span class=hl-string>&quot;timeout&quot;</span>), <span class=hl-number>60</span>, <span class=hl-keyword>fn</span>() {
     ... <span class=hl-comment>// The actual body of your test</span>
   })
 }
-</span></code></pre><p>This works, but it has a couple of drawbacks. Firstly, you need to pull in a new
+</span></code></pre></div><p>This works, but it has a couple of drawbacks. Firstly, you need to pull in a new
 library just to create this one atom, and secondly it just doesn&#39;t look very nice.
 My preferred solution takes advantage of the way that custom types are represented
 in Gleam.</p><p>When Gleam compiles to Erlang, Gleam custom types become an Erlang tuple tagged
 with an atom. So the Gleam value <code>Ok(10)</code> becomes the Erlang <code>{ok, 10}</code>. This is
 perfect for what we need, because it&#39;s the exact same format as what EUnit expects.
-Using that knowledge we can define a custom type to represent the timeout tuple:</p><pre><code data-lang="gleam"><span><span class=hl-keyword>pub</span> <span class=hl-keyword>type</span> <span class=hl-variant>Timeout</span>(a) {
+Using that knowledge we can define a custom type to represent the timeout tuple:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`pub type Timeout(a) {
+  Timeout(time: Int, function: fn() -&gt; a)
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-keyword>pub</span> <span class=hl-keyword>type</span> <span class=hl-variant>Timeout</span>(a) {
   <span class=hl-variant>Timeout</span>(time: <span class=hl-variant>Int</span>, function: <span class=hl-keyword>fn</span>() -&gt; a)
 }
-</span></code></pre><p>You can use <code>Float</code> instead for <code>time</code> here, but I find I rarely need to set my
+</span></code></pre></div><p>You can use <code>Float</code> instead for <code>time</code> here, but I find I rarely need to set my
 timeout to a fraction of a second, so <code>Int</code> is more convenient. Now, we can take
 advantage of Gleam&#39;s <a class="underline" href="https://tour.gleam.run/advanced-features/use/" target="_blank"><code>use</code> syntax</a>,
 which allows us to turn a call to a higher order function — where we pass an anonymous
 function, like we did in the previous example — into a flattened statement.
-We now get a much nicer looking test:</p><pre><code data-lang="gleam"><span><span class=hl-keyword>pub</span> <span class=hl-keyword>type</span> <span class=hl-variant>Timeout</span>(a) {
+We now get a much nicer looking test:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`pub type Timeout(a) {
+  Timeout(time: Int, function: fn() -&gt; a)
+}
+
+pub fn something_test_() {
+  use &lt;- Timeout(60)
+  ... // The actual body of your test
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-keyword>pub</span> <span class=hl-keyword>type</span> <span class=hl-variant>Timeout</span>(a) {
   <span class=hl-variant>Timeout</span>(time: <span class=hl-variant>Int</span>, function: <span class=hl-keyword>fn</span>() -&gt; a)
 }
 
@@ -56,7 +78,7 @@ We now get a much nicer looking test:</p><pre><code data-lang="gleam"><span><spa
   <span class=hl-keyword>use</span> &lt;- <span class=hl-variant>Timeout</span>(<span class=hl-number>60</span>)
   ... <span class=hl-comment>// The actual body of your test</span>
 }
-</span></code></pre><p>Great! We&#39;ve successfully worked around EUnit&#39;s annoying timeout. Job done! But
+</span></code></pre></div><p>Great! We&#39;ve successfully worked around EUnit&#39;s annoying timeout. Job done! But
 wait...</p><h2 id="Multi-target-tests">Multi-target tests</h2><p>Remember when I mentioned earlier about how <code>gleeunit</code> works differently on the
 JavaScript target? Well, the good news is that it doesn&#39;t have a timeout like on
 the Erlang target, but the bad news is that it doesn&#39;t support test generators.
@@ -64,7 +86,18 @@ So if all your tests are called <code>*_test_</code>, none of them are going to 
 the JavaScript target.</p><p>The only real way to get around this is to write a bit of extra boilerplate for
 all of your tests. You need to write a test that runs only on JavaScript, that
 calls the same code as the Erlang test. There&#39;s only really one way achieve this,
-with the <code>@target</code> attribute, and it&#39;s not pretty. Here&#39;s an example:</p><pre><code data-lang="gleam"><span><span class=hl-comment>// This runs on Erlang</span>
+with the <code>@target</code> attribute, and it&#39;s not pretty. Here&#39;s an example:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`// This runs on Erlang
+pub fn something_test_() {
+  use &lt;- Timeout(60)
+  ... // The actual body of your test
+}
+
+// This runs on JavaScript
+@target(javascript)
+pub fn something_test() {
+  something_test_().function()
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-comment>// This runs on Erlang</span>
 <span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>something_test_</span>() {
   <span class=hl-keyword>use</span> &lt;- <span class=hl-variant>Timeout</span>(<span class=hl-number>60</span>)
   ... <span class=hl-comment>// The actual body of your test</span>
@@ -75,7 +108,7 @@ with the <code>@target</code> attribute, and it&#39;s not pretty. Here&#39;s an 
 <span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>something_test</span>() {
   <span class=hl-function>something_test_</span>().<span class=hl-function>function</span>()
 }
-</span></code></pre><p>The <code>@target</code> attribute is deprecated, and you shouldn&#39;t use it really, but there
+</span></code></pre></div><p>The <code>@target</code> attribute is deprecated, and you shouldn&#39;t use it really, but there
 isn&#39;t any alternative for this specific case. Hopefully soon we will have an
 alternative, both to <code>@target</code>, and to this problem of different behaviour in the
 test runner across targets.</p><h2 id="Conclusion">Conclusion</h2><p>If you want to change the timeout of a test that only runs on Erlang, it&#39;s not
