@@ -598,6 +598,10 @@ video {
   margin-bottom: 0.75rem;
 }
 
+.block {
+  display: block;
+}
+
 .inline {
   display: inline;
 }
@@ -755,6 +759,10 @@ video {
   font-weight: 700;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .leading-8 {
   line-height: 2rem;
 }
@@ -770,6 +778,10 @@ video {
 
 .underline {
   text-decoration-line: underline;
+}
+
+.line-through {
+  text-decoration-line: line-through;
 }
 
 h2 {
