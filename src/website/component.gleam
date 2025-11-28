@@ -1,11 +1,14 @@
+import contour
 import gleam/list
+import gleam/option.{type Option, Some}
 import lustre/attribute.{attribute}
 import lustre/element.{type Element}
 import lustre/element/html
+import pearl
 import website/component/footer
 import website/component/header
 
-pub fn head(page: String) -> Element(a) {
+pub fn head(page: String) -> Element(_) {
   html.head([], [
     html.meta([attribute("charset", "UTF-8")]),
     html.title([], page <> " | Gears"),
@@ -38,7 +41,7 @@ pub type Section(a) {
   Section(content: List(Element(a)))
 }
 
-pub fn page(name: String, sections: List(Section(a))) -> Element(a) {
+pub fn page(name: String, sections: List(Section(a))) -> Element(_) {
   html.html([attribute("lang", "en")], [
     head(name),
     html.body([attribute.class("min-h-screen bg-slate-800 text-white")], [
@@ -64,6 +67,33 @@ pub fn text_page(header: String, content: List(Element(a))) -> Section(a) {
   ])
 }
 
-pub fn dangerous_html(html: String) -> Element(a) {
+pub fn dangerous_html(html: String) -> Element(_) {
   element.unsafe_raw_html("", "span", [], html)
+}
+
+pub fn code_block(language: Option(String), code_text: String) -> Element(_) {
+  let code = case language {
+    Some("erlang") | Some("erl") ->
+      dangerous_html(pearl.highlight_html(code_text))
+    Some("gleam") -> dangerous_html(contour.to_html(code_text))
+    _ -> html.text(code_text)
+  }
+
+  html.div([attribute.class("codeblock")], [
+    html.button(
+      [
+        attribute.class("copy-button"),
+        attribute(
+          "onclick",
+          "navigator.clipboard.writeText(`" <> code_text <> "`)",
+        ),
+      ],
+      [html.text("copy")],
+    ),
+    html.pre([], [
+      html.code([attribute("data-lang", option.unwrap(language, "text"))], [
+        code,
+      ]),
+    ]),
+  ])
 }

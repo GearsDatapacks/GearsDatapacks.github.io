@@ -64,3 +64,13 @@ pre code .hl-atom {
 pre code .hl-variant {
   color: #ffddfa
 }
+
+button.copy-button {
+  position: absolute;
+  top: 0.1rem;
+  right: 0.5rem;
+}
+
+div.codeblock {
+  position: sticky;
+}

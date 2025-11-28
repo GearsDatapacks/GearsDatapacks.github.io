@@ -3,7 +3,7 @@ import lustre/element.{type Element}
 import lustre/element/html
 import lustre/element/svg
 
-pub fn view() -> Element(a) {
+pub fn view() -> Element(_) {
   html.header([attribute.class("bg-purple-700 flex w-full select-none")], [
     html.nav(
       [

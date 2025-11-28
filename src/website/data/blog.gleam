@@ -1,20 +1,17 @@
-import contour
 import gleam/bool
 import gleam/dict.{type Dict}
 import gleam/list
-import gleam/option
 import gleam/string
 import jot
-import lustre/attribute.{attribute}
+import lustre/attribute
 import lustre/element
 import lustre/element/html
 import lustre/ssg/djot
-import pearl
 import simplifile
 import tom.{type Toml}
 import website/component
 
-pub fn posts() -> List(Post(a)) {
+pub fn posts() -> List(Post(_)) {
   let assert Ok(files) = simplifile.read_directory("blog/")
 
   list.filter_map(files, fn(file) {
@@ -35,7 +32,7 @@ pub fn posts() -> List(Post(a)) {
   })
 }
 
-fn renderer() -> djot.Renderer(element.Element(a)) {
+fn renderer() -> djot.Renderer(element.Element(_)) {
   let default = djot.default_renderer()
   djot.Renderer(
     ..default,
@@ -72,24 +69,7 @@ fn renderer() -> djot.Renderer(element.Element(a)) {
           )
       }
     },
-    codeblock: fn(attrs, lang, code) {
-      let lang = option.unwrap(lang, "text")
-
-      let code = case lang {
-        "erlang" | "erl" -> component.dangerous_html(pearl.highlight_html(code))
-        "gleam" -> component.dangerous_html(contour.to_html(code))
-        _ -> html.text(code)
-      }
-
-      html.pre(
-        dict.fold(attrs, [], fn(attrs, name, value) {
-          [attribute(name, value), ..attrs]
-        }),
-        [
-          html.code([attribute("data-lang", lang)], [code]),
-        ],
-      )
-    },
+    codeblock: fn(_attrs, lang, code) { component.code_block(lang, code) },
   )
 }
 

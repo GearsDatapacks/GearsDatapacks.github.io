@@ -2,7 +2,7 @@ import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
 
-pub fn view() -> Element(a) {
+pub fn view() -> Element(_) {
   html.footer(
     [
       attribute.class("right-5 bottom-4 fixed"),

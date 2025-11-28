@@ -183,7 +183,7 @@ type Talk {
   )
 }
 
-fn talk(talk: Talk) -> Element(a) {
+fn talk(talk: Talk) -> Element(_) {
   html.p([attribute.class("my-3")], [
     html.a(
       [
@@ -203,7 +203,7 @@ fn talk(talk: Talk) -> Element(a) {
   ])
 }
 
-fn social(social: Social) -> Element(a) {
+fn social(social: Social) -> Element(_) {
   html.a([attribute.href(social.url), attribute.target("_blank")], [
     html.img([
       attribute.src("/images/" <> social.icon),
