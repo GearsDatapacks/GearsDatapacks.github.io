@@ -91,7 +91,8 @@ fn post(post: blog.Post(_)) -> element.Element(_) {
       [html.text(post.title)],
     ),
     html.br([]),
-    element.text(post.date <> " - " <> post.description),
+    html.span([attribute.class("bold")], [html.text(post.human_date)]),
+    html.text(" - " <> post.description),
   ])
 }
 

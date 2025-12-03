@@ -28,8 +28,28 @@ pub fn posts() -> List(Post(_)) {
     // Remove .md suffix
     let slug = string.drop_end(file, 3)
 
-    Ok(Post(title:, slug:, date:, contents:, description:))
+    let assert [year, month, day] = string.split(date, "-")
+    let month = case month {
+      "01" -> "January"
+      "02" -> "February"
+      "03" -> "March"
+      "04" -> "April"
+      "05" -> "May"
+      "06" -> "June"
+      "07" -> "July"
+      "08" -> "August"
+      "09" -> "September"
+      "10" -> "October"
+      "11" -> "November"
+      "12" -> "December"
+      _ -> panic as "Invalid date"
+    }
+
+    let human_date = day <> " " <> month <> ", " <> year
+
+    Ok(Post(title:, slug:, date:, human_date:, contents:, description:))
   })
+  |> list.sort(fn(a, b) { string.compare(b.date, a.date) })
 }
 
 fn get_string_key(toml: Dict(String, Toml), key: String) -> String {
@@ -43,6 +63,7 @@ pub type Post(a) {
     title: String,
     slug: String,
     date: String,
+    human_date: String,
     description: String,
     contents: List(element.Element(a)),
   )

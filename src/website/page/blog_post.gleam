@@ -8,7 +8,7 @@ pub fn view(post: blog.Post(a)) -> element.Element(a) {
   component.page(post.title, [
     component.text_page(post.title, [
       html.h2([attribute.class("date")], [
-        element.text(post.date),
+        element.text(post.human_date),
       ]),
       ..post.contents
     ]),
