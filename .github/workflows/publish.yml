@@ -20,18 +20,9 @@ jobs:
           gleam-version: "1.13.0"
           rebar3-version: "3"
 
-      - name: setup node
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20
-
-      - name: install js dependencies
-        run: npm install tailwindcss
-
       - name: build
         run: |
-          gleam run -m build
-          npx tailwindcss -i ./static/main.css -o ./priv/style.css
+          gleam run
           echo "gearsco.de" > ./priv/CNAME
 
       - name: Deploy

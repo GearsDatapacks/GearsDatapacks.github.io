@@ -114,7 +114,7 @@ fn render_inline(inline: document.Inline) -> Element(a) {
     document.SoftBreak -> html.text("\n")
     document.Strikethrough(inlines) ->
       html.span(
-        [attribute.class("line-through")],
+        [attribute.class("strikethrough")],
         list.map(inlines, render_inline),
       )
     document.Strong(inlines) ->
@@ -134,7 +134,6 @@ fn anchor(children: List(Element(a)), href: String) -> Element(a) {
     [
       attribute.href(href),
       attribute.target(target),
-      attribute.class("underline"),
     ],
     children,
   )

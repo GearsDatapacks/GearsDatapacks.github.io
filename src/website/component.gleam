@@ -12,7 +12,7 @@ pub fn head(page: String) -> Element(_) {
   html.head([], [
     html.meta([attribute("charset", "UTF-8")]),
     html.title([], page <> " | Gears"),
-    html.link([attribute.href("/style.css"), attribute.rel("stylesheet")]),
+    html.link([attribute.href("/main.css"), attribute.rel("stylesheet")]),
     html.link([attribute.href("https://rsms.me/"), attribute.rel("preconnect")]),
     html.link([
       attribute.href("https://rsms.me/inter/inter.css"),
@@ -44,12 +44,9 @@ pub type Section(a) {
 pub fn page(name: String, sections: List(Section(a))) -> Element(_) {
   html.html([attribute("lang", "en")], [
     head(name),
-    html.body([attribute.class("min-h-screen bg-slate-800 text-white")], [
+    html.body([], [
       header.view(),
-      html.main(
-        [attribute.class("py-2")],
-        list.flat_map(sections, fn(section) { section.content }),
-      ),
+      html.main([], list.flat_map(sections, fn(section) { section.content })),
       footer.view(),
     ]),
   ])
@@ -57,13 +54,8 @@ pub fn page(name: String, sections: List(Section(a))) -> Element(_) {
 
 pub fn text_page(header: String, content: List(Element(a))) -> Section(a) {
   Section([
-    html.div([attribute.class("mx-auto max-w-3xl")], [
-      html.h1(
-        [attribute.class("text-3xl font-bold leading-tight text-center")],
-        [html.text(header)],
-      ),
-    ]),
-    html.div([attribute.class("mx-auto max-w-4xl py-8 leading-8")], content),
+    html.h1([], [html.text(header)]),
+    html.div([], content),
   ])
 }
 

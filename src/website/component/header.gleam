@@ -4,56 +4,38 @@ import lustre/element/html
 import lustre/element/svg
 
 pub fn view() -> Element(_) {
-  html.header([attribute.class("bg-purple-700 flex w-full select-none")], [
-    html.nav(
-      [
-        attribute.class(
-          "flex h-16 grow items-center justify-between gap-4 px-4 text-white overflow-hidden",
-        ),
-      ],
-      [
-        html.a([attribute.class("heading"), attribute.href("/")], [
-          html.figure(
-            [attribute.class("flex flex-shrink-0 items-center space-x-1")],
-            [
-              html.img([
+  html.header([], [
+    html.nav([], [
+      html.a([attribute.href("/")], [
+        html.figure([], [
+          html.img([
+            attribute.styles([
+              #("image-rendering", "optimizeSpeed"),
+              #("image-rendering", "pixelated"),
+            ]),
+            attribute.width(64),
+            attribute.height(64),
+            attribute.src("/images/logo.svg"),
+            attribute.alt("Gears logo"),
+          ]),
+          html.figcaption([], [
+            svg.svg([], [
+              svg.path([
+                attribute("d", logo_svg),
+                attribute.class("write"),
                 attribute.styles([
-                  #("image-rendering", "optimizeSpeed"),
-                  #("image-rendering", "pixelated"),
+                  #("fill", "none"),
+                  #("stroke", "#ffffff"),
+                  #("stroke-width", "1px"),
+                  #("stroke-dasharray", "330"),
+                  #("stroke-dashoffset", "330"),
                 ]),
-                attribute.width(64),
-                attribute.height(64),
-                attribute.src("/images/logo.svg"),
-                attribute.alt("Gears logo"),
-                attribute.class("w-16"),
               ]),
-              html.figcaption(
-                [
-                  attribute.class(
-                    "text-4xl font-bold font-celandine hidden md:block",
-                  ),
-                ],
-                [
-                  svg.svg([], [
-                    svg.path([
-                      attribute("d", logo_svg),
-                      attribute.class("animate-write"),
-                      attribute.styles([
-                        #("fill", "none"),
-                        #("stroke", "#ffffff"),
-                        #("stroke-width", "1px"),
-                        #("stroke-dasharray", "330"),
-                        #("stroke-dashoffset", "330"),
-                      ]),
-                    ]),
-                  ]),
-                ],
-              ),
-            ],
-          ),
+            ]),
+          ]),
         ]),
-      ],
-    ),
+      ]),
+    ]),
   ])
 }
 

@@ -7,7 +7,7 @@ import website/data/blog
 pub fn view(post: blog.Post(a)) -> element.Element(a) {
   component.page(post.title, [
     component.text_page(post.title, [
-      html.h2([attribute.class("text-xl font-bold text-center m-0")], [
+      html.h2([attribute.class("date")], [
         element.text(post.date),
       ]),
       ..post.contents

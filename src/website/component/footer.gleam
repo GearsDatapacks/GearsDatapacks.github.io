@@ -3,47 +3,39 @@ import lustre/element.{type Element}
 import lustre/element/html
 
 pub fn view() -> Element(_) {
-  html.footer(
-    [
-      attribute.class("right-5 bottom-4 fixed"),
-    ],
-    [
-      element.text("Made with "),
-      html.a(
-        [
-          attribute.href("https://lustre.build"),
-          attribute.target("_blank"),
-          attribute.class("underline"),
-        ],
-        [
-          element.text("Lustre"),
-        ],
-      ),
-      element.text(" and "),
-      html.a(
-        [
-          attribute.href("https://gleam.run"),
-          attribute.target("_blank"),
-          attribute.class("underline"),
-        ],
-        [
-          element.text("Gleam"),
-        ],
-      ),
-      html.br([]),
-      element.text("Source: "),
-      html.a(
-        [
-          attribute.href(
-            "https://github.com/GearsDatapacks/GearsDatapacks.github.io",
-          ),
-          attribute.target("_blank"),
-          attribute.class("underline"),
-        ],
-        [
-          element.text("GitHub"),
-        ],
-      ),
-    ],
-  )
+  html.footer([], [
+    element.text("Made with "),
+    html.a(
+      [
+        attribute.href("https://lustre.build"),
+        attribute.target("_blank"),
+      ],
+      [
+        element.text("Lustre"),
+      ],
+    ),
+    element.text(" and "),
+    html.a(
+      [
+        attribute.href("https://gleam.run"),
+        attribute.target("_blank"),
+      ],
+      [
+        element.text("Gleam"),
+      ],
+    ),
+    html.br([]),
+    element.text("Source: "),
+    html.a(
+      [
+        attribute.href(
+          "https://github.com/GearsDatapacks/GearsDatapacks.github.io",
+        ),
+        attribute.target("_blank"),
+      ],
+      [
+        element.text("GitHub"),
+      ],
+    ),
+  ])
 }

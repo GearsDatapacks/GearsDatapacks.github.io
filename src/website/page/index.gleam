@@ -9,7 +9,7 @@ fn index() {
   component.text_page("Hello and welcome to my website!", [
     html.p(
       [
-        attribute.class("text-xl"),
+        attribute.class("big-p"),
       ],
       [
         html.text(
@@ -20,7 +20,6 @@ fn index() {
         html.a(
           [
             attribute.target("_blank"),
-            attribute.class("font-bold underline"),
             attribute.href("https://gleam.run"),
           ],
           [html.text("Gleam programming language")],
@@ -31,7 +30,6 @@ fn index() {
         html.a(
           [
             attribute.target("_blank"),
-            attribute.class("font-bold underline"),
             attribute.href("https://youtube.com/@Gearsdatapacks"),
           ],
           [html.text("YouTube channel")],
@@ -45,7 +43,6 @@ fn index() {
         html.a(
           [
             attribute.target("_blank"),
-            attribute.class("font-bold underline"),
             attribute.href("https://github.com/sponsors/GearsDatapacks"),
           ],
           [html.text("sponsor me on GitHub")],
@@ -65,17 +62,17 @@ pub fn my_stuff(posts: List(blog.Post(_))) -> component.Section(_) {
     "My Stuff",
     list.flatten([
       [
-        html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
+        html.h2([], [
           element.text("Links"),
         ]),
         html.p([], list.map(socials, social)),
-        html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
+        html.h2([], [
           element.text("Posts"),
         ]),
       ],
       list.map(posts, post),
       [
-        html.h2([attribute.class("text-2xl font-bold leading-tight my-2")], [
+        html.h2([], [
           element.text("Talks"),
         ]),
       ],
@@ -85,18 +82,16 @@ pub fn my_stuff(posts: List(blog.Post(_))) -> component.Section(_) {
 }
 
 fn post(post: blog.Post(_)) -> element.Element(_) {
-  html.div([attribute.class("")], [
+  html.div([], [
     html.a(
       [
         attribute.href("/blog/" <> post.slug),
-        attribute.class("text-xl font-bold hover:underline"),
+        attribute.class("big-link"),
       ],
       [html.text(post.title)],
     ),
-    // html.p([attribute.class("text-sm m-0")], [element.text(post.date)]),
-    html.p([attribute.class("text-md my-0.5")], [
-      element.text(post.date <> " - " <> post.description),
-    ]),
+    html.br([]),
+    element.text(post.date <> " - " <> post.description),
   ])
 }
 
@@ -184,12 +179,12 @@ type Talk {
 }
 
 fn talk(talk: Talk) -> Element(_) {
-  html.p([attribute.class("my-3")], [
+  html.p([attribute.class("talk")], [
     html.a(
       [
         attribute.href(talk.url),
         attribute.target("_blank"),
-        attribute.class("font-bold hover:underline text-xl"),
+        attribute.class("big-link"),
       ],
       [
         element.text(talk.description),
@@ -204,14 +199,21 @@ fn talk(talk: Talk) -> Element(_) {
 }
 
 fn social(social: Social) -> Element(_) {
-  html.a([attribute.href(social.url), attribute.target("_blank")], [
-    html.img([
-      attribute.src("/images/" <> social.icon),
-      attribute.alt(social.name),
-      attribute.title(social.name),
-      attribute.class("w-icon inline m-1"),
-    ]),
-    element.text(social.description),
-    html.br([]),
-  ])
+  html.a(
+    [
+      attribute.href(social.url),
+      attribute.target("_blank"),
+      attribute.class("social"),
+    ],
+    [
+      html.img([
+        attribute.src("/images/" <> social.icon),
+        attribute.alt(social.name),
+        attribute.title(social.name),
+        attribute.width(48),
+      ]),
+      element.text(social.description),
+      html.br([]),
+    ],
+  )
 }

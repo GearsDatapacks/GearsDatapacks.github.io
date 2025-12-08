@@ -1,10 +1,117 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+code {
+  font-family: 'Liberation Mono';
+}
 
-h2 {
-  font-size: x-large;
+button {
+  background-color: transparent;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+figure {
+  margin: 0;
+}
+
+img,
+svg {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter var';
+  min-height: 100vh;
+  background-color: rgb(30 41 59);
+  color: white;
+}
+
+main {
+  padding: 0.5rem 0;
+}
+
+a {
+  color: inherit;
   font-weight: bold;
+}
+
+h1 {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 48rem;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  line-height: 1.25;
+  text-align: center;
+}
+
+main>div {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 56rem;
+  padding: 2rem 0;
+  line-height: 2rem;
+}
+
+header {
+  background-color: rgb(126 34 206);
+  display: flex;
+  width: 100%;
+  user-select: none;
+}
+
+header>nav {
+  display: flex;
+  height: 4rem;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0 1rem;
+  overflow: hidden;
+}
+
+header figure {
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+}
+
+header figcaption {
+  margin-left: 0.25rem;
+}
+
+p.big-p {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+}
+
+a.big-link {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a.big-link:hover {
+  text-decoration: underline;
+}
+
+.strikethrough {
+  text-decoration: line-through;
 }
 
 p {
@@ -73,4 +180,50 @@ button.copy-button {
 
 div.codeblock {
   position: sticky;
+}
+
+@keyframes write {
+  90% {
+    stroke-dashoffset: 0;
+    fill: rgba(255, 255, 255, 0);
+  }
+
+  100% {
+    fill: rgba(255, 255, 255, 255);
+  }
+}
+
+.write {
+  animation: write 3s linear forwards;
+}
+
+footer {
+  position: fixed;
+  bottom: 1em;
+  right: 1.25rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+h2.date {
+  margin: 0;
+  margin-top: -1rem;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.talk {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+a.social {
+  text-decoration: inherit;
+  font-weight: inherit;
+}
+
+a.social>img {
+  margin: 0.25rem;
 }
