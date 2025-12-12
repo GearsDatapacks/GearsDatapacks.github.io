@@ -48,6 +48,10 @@ a {
   font-weight: bold;
 }
 
+a code {
+  font-weight: normal;
+}
+
 h1 {
   margin-left: auto;
   margin-right: auto;
