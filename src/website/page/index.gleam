@@ -97,13 +97,6 @@ fn post(post: blog.Post(_)) -> element.Element(_) {
 
 const talks = [
   Talk(
-    description: "Six to Sixteen: A Child's Programming Journey (Recording coming soon)",
-    url: "https://2025.ffconf.org/surya",
-    date: "14 November, 2025",
-    conference: "FFConf 2025",
-    location: "Duke of York's Cinema, Brighton",
-  ),
-  Talk(
     description: "Optimising the hell out of Gleam (Upcoming)",
     url: "https://gleamgathering.com/#speakers",
     date: "21 February, 2026",
@@ -116,6 +109,13 @@ const talks = [
     date: "21 February, 2026",
     conference: "Gleam Gathering",
     location: "Origin Workspace, Bristol",
+  ),
+  Talk(
+    description: "Six to Sixteen: A Child's Programming Journey (Recording)",
+    url: "https://www.youtube.com/watch?v=anF9c2zq1BM",
+    date: "14 November, 2025",
+    conference: "FFConf 2025",
+    location: "Duke of York's Cinema, Brighton",
   ),
 ]
 
