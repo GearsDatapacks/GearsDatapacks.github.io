@@ -250,7 +250,8 @@ bytes. If given an explicit size, that number of bits/bytes is matched. If the
 `size` option is not used, they match everything remaining in the bit array.
 
 **Note**: When using the `bytes` option, size is measured in bytes, and the `unit`
-option cannot be used.
+option cannot be used. This is currently a bug in Gleam, you can track its status
+[here](https://github.com/gleam-lang/gleam/issues/5208).
 
 ```gleam
 let assert <<_, bits:bits-size(12), _:size(4)>> = <<1, 2, 3>>
