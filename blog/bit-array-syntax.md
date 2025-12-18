@@ -13,6 +13,20 @@ for further reading, but the syntax isn't exactly the same as on Erlang, so ther
 some ambiguity as to how it exactly works. To make it easier, I wanted to write a
 comprehensive guide, to make it as easy as possible to understand how they work.
 
+### Table of contents
+---
+- [The basics](#the-basics)
+- [Segment types](#segment-types)
+- [Segment size](#segment-size)
+- [Endianness](#endianness)
+- [Pattern Matching](#pattern-matching)
+  - [Strings](#strings)
+  - [Bits and Bytes](#bits-and-bytes)
+  - [Signedness](#signedness)
+- [JavaScript support](#javascript-support)
+- [Example](#example)
+---
+
 ## The basics
 
 Bit arrays are delimited by double angle brackets (`<<` and `>>`), and contain zero
