@@ -225,7 +225,8 @@ echo first
 in construction, and a second <code>bytes</code> option, which only matches whole numbers of
 bytes. If given an explicit size, that number of bits/bytes is matched. If the
 <code>size</code> option is not used, they match everything remaining in the bit array.</p><p><strong>Note</strong>: When using the <code>bytes</code> option, size is measured in bytes, and the <code>unit</code>
-option cannot be used.</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`let assert &lt;&lt;_, bits:bits-size(12), _:size(4)&gt;&gt; = &lt;&lt;1, 2, 3&gt;&gt;
+option cannot be used. This is currently a bug in Gleam, you can track its status
+<a href="https://github.com/gleam-lang/gleam/issues/5208" target="_blank">here</a>.</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`let assert &lt;&lt;_, bits:bits-size(12), _:size(4)&gt;&gt; = &lt;&lt;1, 2, 3&gt;&gt;
 echo bits
 // &lt;&lt;2, 0:4&gt;&gt;
 
