@@ -35,7 +35,7 @@ fn index() {
           [html.text("YouTube channel")],
         ),
         html.text(
-          ", where I you can watch my old videos on Minecraft datapacks, as well as videos covering changes to Gleam.",
+          ", where you can watch my old videos on Minecraft datapacks, as well as videos covering changes to Gleam.",
         ),
         html.br([]),
         html.br([]),
