@@ -62,17 +62,17 @@ pub fn my_stuff(posts: List(blog.Post(_))) -> component.Section(_) {
     "My Stuff",
     list.flatten([
       [
-        html.h2([], [
+        html.h2([attribute.id("links")], [
           element.text("Links"),
         ]),
         html.p([], list.map(socials, social)),
-        html.h2([], [
+        html.h2([attribute.id("posts")], [
           element.text("Posts"),
         ]),
       ],
       list.map(posts, post),
       [
-        html.h2([], [
+        html.h2([attribute.id("talks")], [
           element.text("Talks"),
         ]),
       ],
