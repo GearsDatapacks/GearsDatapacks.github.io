@@ -1,12 +1,11 @@
-import contour
 import gleam/list
-import gleam/option.{type Option, Some}
+import gleam/option.{type Option}
 import lustre/attribute.{attribute}
 import lustre/element.{type Element}
 import lustre/element/html
-import pearl
 import website/component/footer
 import website/component/header
+import website/highlight
 
 pub fn head(page: String) -> Element(_) {
   html.head([], [
@@ -64,11 +63,7 @@ pub fn raw_html(html: String) -> Element(_) {
 }
 
 pub fn code_block(language: Option(String), code_text: String) -> Element(_) {
-  let code = case language {
-    Some("erlang") | Some("erl") -> raw_html(pearl.highlight_html(code_text))
-    Some("gleam") -> raw_html(contour.to_html(code_text))
-    _ -> html.text(code_text)
-  }
+  let code = highlight.highlight(code_text, language)
 
   html.div([attribute.class("codeblock")], [
     html.button(

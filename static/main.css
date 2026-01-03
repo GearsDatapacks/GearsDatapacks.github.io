@@ -231,3 +231,11 @@ a.social {
 a.social>img {
   margin: 0.25rem;
 }
+
+pre code .hl-added {
+  background-color: #004000;
+}
+
+pre code .hl-removed {
+  background-color: #400000;
+}
