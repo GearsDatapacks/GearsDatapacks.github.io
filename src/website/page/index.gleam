@@ -67,7 +67,10 @@ pub fn my_stuff(posts: List(blog.Post(_))) -> component.Section(_) {
         ]),
         html.p([], list.map(socials, social)),
         html.h2([attribute.id("posts")], [
-          element.text("Posts"),
+          element.text("Posts • "),
+          html.a([attribute.href("/blog.xml"), attribute.class("big-link")], [
+            html.text("RSS Feed"),
+          ]),
         ]),
       ],
       list.map(posts, post),
