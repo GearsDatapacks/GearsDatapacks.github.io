@@ -1,6 +1,6 @@
 ---
 title = "Test Timeouts in Gleam"
-date = "2025-11-25"
+date = 2025-11-25
 description = "By default, Gleam tests come with a timeout of 5 seconds. It's not as easy as you might think to remove it."
 ---
 

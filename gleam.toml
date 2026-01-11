@@ -15,7 +15,7 @@ version = "1.0.0"
 [dependencies]
 gleam_stdlib = ">= 0.44.0 and < 2.0.0"
 lustre = ">= 5.0.2 and < 6.0.0"
-tom = ">= 1.1.0 and < 2.0.0"
+tom = ">= 2.0.0 and < 3.0.0"
 simplifile = ">= 2.3.0 and < 3.0.0"
 pearl = ">= 2.2.0 and < 3.0.0"
 contour = ">= 1.2.1 and < 2.0.0"
@@ -23,8 +23,8 @@ mork = ">= 1.8.0 and < 2.0.0"
 filepath = ">= 1.1.2 and < 2.0.0"
 frontmatter = ">= 1.0.1 and < 2.0.0"
 gleam_regexp = ">= 1.1.1 and < 2.0.0"
-webls = ">= 1.5.1 and < 2.0.0"
-birl = ">= 1.8.0 and < 2.0.0"
+webls = { git = "https://github.com/GearsDatapacks/webls", ref = "switch-to-gleam-time" }
+gleam_time = ">= 1.6.0 and < 2.0.0"
 
 [dev-dependencies]
 gleeunit = ">= 1.0.0 and < 2.0.0"

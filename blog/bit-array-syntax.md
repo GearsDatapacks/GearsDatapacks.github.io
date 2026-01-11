@@ -1,6 +1,6 @@
 ---
 title = "Making the Most of Bit Arrays"
-date = "2025-12-18"
+date = 2025-12-18
 description = "Gleam has a special piece of syntax that most other languages don't: Bit arrays. They are extremely powerful, but unfortunately the documentation is a little sparse."
 ---
 

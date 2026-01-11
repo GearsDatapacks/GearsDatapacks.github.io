@@ -1,9 +1,8 @@
-import birl
 import filepath as path
-import gleam/int
 import gleam/io
 import gleam/list
-import gleam/string
+import gleam/time/calendar
+import gleam/time/timestamp
 import lustre/element
 import simplifile as file
 import webls/rss
@@ -40,16 +39,13 @@ pub fn main() {
     |> rss.with_channel_docs
     |> rss.with_channel_items(
       list.map(posts, fn(post) {
-        let assert [year, month, day] =
-          post.date |> string.split("-") |> list.filter_map(int.parse)
-
         rss.item(post.title, post.description)
         |> rss.with_item_link("https://gearsco.de/blog/" <> post.slug)
-        |> rss.with_item_pub_date(
-          birl.from_erlang_universal_datetime(
-            #(#(year, month, day), #(0, 0, 0)),
-          ),
-        )
+        |> rss.with_item_pub_date(timestamp.from_calendar(
+          post.date,
+          calendar.TimeOfDay(0, 0, 0, 0),
+          calendar.utc_offset,
+        ))
       }),
     )
 

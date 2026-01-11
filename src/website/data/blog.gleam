@@ -4,6 +4,7 @@ import gleam/dict.{type Dict}
 import gleam/list
 import gleam/option
 import gleam/string
+import gleam/time/calendar
 import lustre/element
 import simplifile
 import tom.{type Toml}
@@ -11,7 +12,6 @@ import website/markdown
 
 pub fn posts() -> List(Post(_)) {
   let assert Ok(files) = simplifile.read_directory("blog/")
-
   list.filter_map(files, fn(file) {
     use <- bool.guard(!string.ends_with(file, ".md"), Error(Nil))
     let file_path = "blog/" <> file
@@ -24,37 +24,18 @@ pub fn posts() -> List(Post(_)) {
 
     let title = get_string_key(metadata, "title")
     let description = get_string_key(metadata, "description")
-    let date = get_string_key(metadata, "date")
+    let assert Ok(date) = tom.get_date(metadata, ["date"])
+
     // Remove .md suffix
     let slug = string.drop_end(file, 3)
 
-    let assert [year, month, day] = string.split(date, "-")
-    let month = case month {
-      "01" -> "January"
-      "02" -> "February"
-      "03" -> "March"
-      "04" -> "April"
-      "05" -> "May"
-      "06" -> "June"
-      "07" -> "July"
-      "08" -> "August"
-      "09" -> "September"
-      "10" -> "October"
-      "11" -> "November"
-      "12" -> "December"
-      _ -> panic as "Invalid date"
-    }
-
-    let human_date = day <> " " <> month <> ", " <> year
-
-    Ok(Post(title:, slug:, date:, human_date:, contents:, description:))
+    Ok(Post(title:, slug:, date:, contents:, description:))
   })
-  |> list.sort(fn(a, b) { string.compare(b.date, a.date) })
+  |> list.sort(fn(a, b) { calendar.naive_date_compare(b.date, a.date) })
 }
 
 fn get_string_key(toml: Dict(String, Toml), key: String) -> String {
-  let assert Ok(value) = dict.get(toml, key)
-  let assert tom.String(value) = value
+  let assert Ok(value) = tom.get_string(toml, [key])
   value
 }
 
@@ -62,8 +43,7 @@ pub type Post(a) {
   Post(
     title: String,
     slug: String,
-    date: String,
-    human_date: String,
+    date: calendar.Date,
     description: String,
     contents: List(element.Element(a)),
   )

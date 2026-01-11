@@ -1,4 +1,6 @@
+import gleam/int
 import gleam/list
+import gleam/time/calendar
 import lustre/attribute
 import lustre/element.{type Element}
 import lustre/element/html
@@ -85,6 +87,14 @@ pub fn my_stuff(posts: List(blog.Post(_))) -> component.Section(_) {
 }
 
 fn post(post: blog.Post(_)) -> element.Element(_) {
+  let calendar.Date(year:, month:, day:) = post.date
+  let date =
+    int.to_string(day)
+    <> " "
+    <> calendar.month_to_string(month)
+    <> ", "
+    <> int.to_string(year)
+
   html.div([], [
     html.a(
       [
@@ -94,7 +104,7 @@ fn post(post: blog.Post(_)) -> element.Element(_) {
       [html.text(post.title)],
     ),
     html.br([]),
-    html.span([attribute.class("bold")], [html.text(post.human_date)]),
+    html.span([attribute.class("bold")], [html.text(date)]),
     html.text(" - " <> post.description),
   ])
 }

@@ -1,5 +1,6 @@
 import gleam/dict
 import gleam/list
+import gleam/option
 import gleam/regexp
 import gleam/string
 import lustre/attribute.{attribute}
@@ -85,7 +86,8 @@ fn to_id(text: String) -> String {
 
 fn render_inline(inline: document.Inline) -> Element(a) {
   case inline {
-    document.Autolink(uri:) -> anchor([html.text(uri)], uri)
+    document.Autolink(uri:, text:) ->
+      anchor([html.text(option.unwrap(text, uri))], uri)
     document.CodeSpan(code) -> html.code([], [html.text(code)])
     document.EmailAutolink(mail:) -> anchor([html.text(mail)], mail)
     document.Emphasis(inlines) -> html.em([], list.map(inlines, render_inline))
