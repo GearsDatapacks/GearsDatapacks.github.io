@@ -23,7 +23,7 @@ packages = [
   { name = "simplifile", version = "2.3.2", build_tools = ["gleam"], requirements = ["filepath", "gleam_stdlib"], otp_app = "simplifile", source = "hex", outer_checksum = "E049B4DACD4D206D87843BCF4C775A50AE0F50A52031A2FFB40C9ED07D6EC70A" },
   { name = "splitter", version = "1.2.0", build_tools = ["gleam"], requirements = ["gleam_stdlib"], otp_app = "splitter", source = "hex", outer_checksum = "3DFD6B6C49E61EDAF6F7B27A42054A17CFF6CA2135FF553D0CB61C234D281DD0" },
   { name = "tom", version = "2.0.0", build_tools = ["gleam"], requirements = ["gleam_stdlib", "gleam_time"], otp_app = "tom", source = "hex", outer_checksum = "74D0C5A3761F7A7D06994755D4D5AD854122EF8E9F9F76A3E7547606D8C77091" },
-  { name = "webls", version = "1.5.1", build_tools = ["gleam"], requirements = ["gleam_stdlib", "gleam_time"], source = "git", repo = "https://github.com/GearsDatapacks/webls", commit = "a53611a31765bac8d2a7a8b8fc1a963ccbe599f6" },
+  { name = "webls", version = "1.6.0", build_tools = ["gleam"], requirements = ["gleam_stdlib", "gleam_time"], otp_app = "webls", source = "hex", outer_checksum = "60508D36D6205763BC24D356B6864FFAA0623EF9172B94C1771A673854500C6C" },
 ]
 
 [requirements]
@@ -39,4 +39,4 @@ mork = { version = ">= 1.8.0 and < 2.0.0" }
 pearl = { version = ">= 2.2.0 and < 3.0.0" }
 simplifile = { version = ">= 2.3.0 and < 3.0.0" }
 tom = { version = ">= 2.0.0 and < 3.0.0" }
-webls = { git = "https://github.com/GearsDatapacks/webls", ref = "switch-to-gleam-time" }
+webls = { version = ">= 1.6.0 and < 2.0.0" }
