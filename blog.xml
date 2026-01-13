@@ -10,12 +10,12 @@
 <title>Making the Most of Bit Arrays</title>
 <description>Gleam has a special piece of syntax that most other languages don't: Bit arrays. They are extremely powerful, but unfortunately the documentation is a little sparse.</description>
 <link>https://gearsco.de/blog/bit-array-syntax</link>
-<pubDate>2025-12-18T00:00:00.000Z</pubDate>
+<pubDate>2025-12-18T00:00:00Z</pubDate>
 </item>
 <item>
 <title>Test Timeouts in Gleam</title>
 <description>By default, Gleam tests come with a timeout of 5 seconds. It's not as easy as you might think to remove it.</description>
 <link>https://gearsco.de/blog/gleam-test-timeouts</link>
-<pubDate>2025-11-25T00:00:00.000Z</pubDate>
+<pubDate>2025-11-25T00:00:00Z</pubDate>
 </item></channel>
 </rss>
