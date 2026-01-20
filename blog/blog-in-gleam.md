@@ -43,6 +43,11 @@ $ cd blog
 $ gleam add lustre simplifile filepath
 ```
 
+**Note**: You can also use [`lustre_ssg`](https://hexdocs.pm/lustre_ssg) for
+this, as I did when I started out. I ended up switching to a custom build
+system as it gave me more flexibility, and it's about the same amount of code so
+I decided to show that here instead.
+
 Since we're building a static website, our Gleam code only gets run at build time.
 Once we're viewing it in browser, it's just static HTML, CSS and other files.
 
