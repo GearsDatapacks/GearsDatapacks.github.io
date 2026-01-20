@@ -13,7 +13,10 @@ $ gleam add lustre simplifile filepath
 `)">copy</button><pre><code data-lang="shell">$ gleam new blog
 $ cd blog
 $ gleam add lustre simplifile filepath
-</code></pre></div><p>Since we&#39;re building a static website, our Gleam code only gets run at build time.
+</code></pre></div><p><strong>Note</strong>: You can also use <a href="https://hexdocs.pm/lustre_ssg" target="_blank"><code>lustre_ssg</code></a> for
+this, as I did when I started out. I ended up switching to a custom build
+system as it gave me more flexibility, and it&#39;s about the same amount of code so
+I decided to show that here instead.</p><p>Since we&#39;re building a static website, our Gleam code only gets run at build time.
 Once we&#39;re viewing it in browser, it&#39;s just static HTML, CSS and other files.</p><p><code>blog.gleam</code> will be our entrypoint, and that&#39;s where we&#39;ll implement our build
 script. Let&#39;s start off with a baseline:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`import filepath
 import gleam/io
