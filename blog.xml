@@ -7,6 +7,15 @@
 <language>en-gb</language>
 <docs>https://www.rssboard.org/rss-2-0-1</docs>
 <item>
+<title>Building a Blog in Gleam</title>
+<description>2026 is the year of blog posts, or so I hear. The thing is, there are so many
+options that you can use to make your blog, many of which are very complicated
+and feature rich — and sometimes you just want to start writing, and not have to
+deal with all that complexity.</description>
+<link>https://gearsco.de/blog/blog-in-gleam</link>
+<pubDate>2026-01-20T00:00:00Z</pubDate>
+</item>
+<item>
 <title>Making the Most of Bit Arrays</title>
 <description>Gleam has a special piece of syntax that most other languages don't: Bit arrays. They are extremely powerful, but unfortunately the documentation is a little sparse.</description>
 <link>https://gearsco.de/blog/bit-array-syntax</link>

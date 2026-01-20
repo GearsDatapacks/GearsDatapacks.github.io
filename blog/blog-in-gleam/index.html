@@ -1,0 +1,672 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><title>Building a Blog in Gleam | Gears</title><link href="/main.css" rel="stylesheet"><link href="https://rsms.me/" rel="preconnect"><link href="https://rsms.me/inter/inter.css" rel="stylesheet"><link href="/favicon.svg" rel="icon" type="image/svg+xml"><link href="/favicon.ico" rel="alternate icon" sizes="48x48" type="image/png"><link href="/apple-touch-icon.png" rel="apple-touch-icon" sizes="192x192"></head><body><header><nav><a href="/"><figure><img alt="Gears logo" height="64" src="/images/logo.svg" style="image-rendering:optimizeSpeed;image-rendering:pixelated;" width="64"><figcaption><svg xmlns="http://www.w3.org/2000/svg"><path class="write" d="m 46.655648,87.273021 c 0.08105,4.602277 0.692125,6.832404 4.69733,4.361206 l 1.696146,2.728148 -14.225762,9.638735 c -2.121146,-1.55607 -3.838276,-4.0442 -4.678364,-7.342384 -3.390161,3.734254 -7.562386,6.271464 -13.082724,5.788494 C 10.581627,101.53029 2.8720353,90.133692 1.4418114,77.915968 0.26959238,64.592176 8.4519982,56.762609 16.647423,50.627146 c 6.709353,-4.814367 12.185664,-6.592535 16.425926,-6.221561 10.400636,0.909937 10.2848,16.055858 17.661218,12.831577 l 1.369105,2.78015 -13.921761,7.085583 C 29.896397,65.974923 28.524127,49.408937 19.629655,55.241389 c -4.548238,3.149245 -6.106269,8.978614 -4.24704,19.057204 1.461159,6.335369 5.770507,14.209799 12.214927,17.030887 2.403158,1.097035 4.205262,0.770993 6.046357,-0.922122 l 0.08399,-0.960053 0.300983,-3.440212 c -4.7513,-0.980005 -7.300468,-2.251058 -10.07761,0.0051 L 22.053124,83.749873 33.3637,74.259168 c 9.7606,0.853945 14.332923,4.801125 19.271184,0.879838 l 1.905129,2.18211 -7.907394,7.450543 c -0.0043,0.967047 0.07203,1.94111 0.02303,2.501151 z m 27.106123,0.967939 c 3.255101,3.879267 7.924879,5.594901 14.610274,2.013462 L 89.84759,92.997687 71.511182,104.62772 C 62.371276,103.58301 53.002118,82.748534 59.5709,73.029912 61.983775,69.728218 72.927415,59.493724 79.332135,60.054064 85.49365,60.593125 92.577447,70.199104 92.109323,75.549881 Z M 70.902742,68.629587 c -3.536763,2.141364 -1.750046,9.73174 1.253752,15.549655 L 79.558343,78.94493 C 78.612783,73.878931 74.248977,66.798328 70.902742,68.629587 Z m 62.806708,23.029124 1.74528,2.221251 -13.08952,10.709588 c -2.6179,0 -5.2358,-4.839141 -5.71178,-8.567661 l -11.7409,8.567661 c -6.505075,-0.0794 -10.709601,-7.61571 -9.916305,-13.24816 1.269292,-8.250355 9.123005,-13.010178 19.832605,-16.104062 -3.49054,-5.553124 -13.08951,-4.997811 -19.0393,-1.348612 l -1.586601,-2.459244 14.993441,-10.78893 c 9.28166,0 19.19795,1.665941 19.43593,14.438129 l 0.0794,12.375534 c -0.0794,4.125169 1.26928,6.901741 4.99782,4.204506 z m -22.60914,3.490534 4.99781,-3.252544 -0.0794,-12.930849 c -10.23362,3.728531 -10.70961,12.930849 -4.91847,16.183393 z m 51.19467,-16.075266 c -2.21157,-3.712255 -5.13397,-8.846224 -8.45131,-5.765843 l -0.47391,0.473911 v 1.184756 l 0.079,12.795432 c -0.079,4.028194 1.18475,6.555693 4.897,3.949214 l 1.81664,2.448509 -13.0324,10.504892 c -3.55428,-2.21157 -6.23973,-6.792636 -6.16074,-13.664255 V 78.679058 c -0.15797,-4.818028 -1.97461,-6.397712 -6.63468,-3.396316 L 132.99186,72.755248 147.13,60.907625 c 3.08039,2.290541 4.89704,4.423114 5.68687,7.740447 l 8.05639,-7.740447 c 6.00279,0 11.68966,9.636068 11.68966,9.636068 z m 19.14678,-9.156439 c 4.4536,7.601839 23.80372,5.375035 23.80372,20.962647 0,10.442913 -10.13577,13.207223 -19.5037,13.207223 -7.14112,0 -13.8983,-2.45716 -16.12512,-6.757188 l 11.36438,-10.596498 1.84287,1.45894 c -2.91787,2.841084 11.134,6.987545 15.05009,6.987545 0.46073,-6.296472 -26.33768,-10.058994 -26.33768,-19.580489 0,-8.369699 13.89831,-14.05188 13.89831,-14.05188 7.83221,0 16.2019,4.4536 21.11622,1.61251 l 1.22858,1.689298 -12.90008,10.289358 c -4.99112,0 -11.44115,-8.292917 -13.43759,-5.221466 z" style="fill:none;stroke:#ffffff;stroke-width:1px;stroke-dasharray:330;stroke-dashoffset:330;"></path></svg></figcaption></figure></a></nav></header><main><h1>Building a Blog in Gleam</h1><div><h2 class="date">20 January, 2026</h2><p>2026 is the year of blog posts, or so I hear. The thing is, there are so many
+options that you can use to make your blog, many of which are very complicated
+and feature rich — and sometimes you just want to start writing, and not have to
+deal with all that complexity.</p><p>That&#39;s what this is — an alternative to all the complicated frameworks out there,
+a nice simple starting point which you can expand to your heart&#39;s desire, or
+leave as is. Written in Gleam.</p><p>The code demonstrated in this article is a simplified version of what is
+<a href="https://github.com/GearsDatapacks/GearsDatapacks.github.io" target="_blank">powering the blog you are reading right now</a>.</p><p>This article assumes a <a href="https://tour.gleam.run" target="_blank">basic knowledge of Gleam</a>.</p><h2 id="table-of-contents">Table of contents</h2><ul><li><p><a href="#setting-up-the-project" target>Setting up the project</a></p></li><li><p><a href="#hooking-up-blog-posts" target>Hooking up blog posts</a></p></li><li><p><a href="#linking-to-our-posts" target>Linking to our posts</a></p></li><li><p><a href="#adding-styling-and-images" target>Adding styling and images</a></p></li><li><p><a href="#adding-an-rss-feed" target>Adding an RSS feed</a></p></li><li><p><a href="#deploying" target>Deploying</a></p></li><li><p><a href="#conclusion" target>Conclusion</a></p></li></ul><hr><h2 id="setting-up-the-project">Setting up the project</h2><p>Let&#39;s get started by setting up a project. We&#39;ll add a few dependencies to begin:
+<a href="https://hexdocs.pm/lustre" target="_blank"><code>lustre</code></a>, <a href="https://hexdocs.pm/simplifile" target="_blank"><code>simplifile</code></a>
+and <a href="https://hexdocs.pm/filepath" target="_blank"><code>filepath</code></a>. We&#39;ll add more dependencies later.</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`$ gleam new blog
+$ cd blog
+$ gleam add lustre simplifile filepath
+`)">copy</button><pre><code data-lang="shell">$ gleam new blog
+$ cd blog
+$ gleam add lustre simplifile filepath
+</code></pre></div><p>Since we&#39;re building a static website, our Gleam code only gets run at build time.
+Once we&#39;re viewing it in browser, it&#39;s just static HTML, CSS and other files.</p><p><code>blog.gleam</code> will be our entrypoint, and that&#39;s where we&#39;ll implement our build
+script. Let&#39;s start off with a baseline:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`import filepath
+import gleam/io
+import lustre/element
+import lustre/element/html
+import simplifile
+
+// Where to output the built website. This can be anywhere you like.
+const out_directory = &quot;./out&quot;
+
+// View for our home page.
+fn index() -&gt; element.Element(_) {
+  html.h1([], [html.text(&quot;Hello, and welcome to my blog!&quot;)])
+}
+
+pub fn main() -&gt; Nil {
+  let index_page = element.to_document_string(index())
+
+  // Ensure our output directory exists. Since this is a build script, crashing
+  // on an error is probably fine.
+  let assert Ok(Nil) = simplifile.create_directory_all(out_directory)
+
+  // Write the index page to our file system.
+  let assert Ok(Nil) =
+    simplifile.write(filepath.join(out_directory, &quot;index.html&quot;), index_page)
+
+  io.println(&quot;Build succeeded!&quot;)
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-keyword>import</span> <span class=hl-module>filepath</span>
+<span class=hl-keyword>import</span> <span class=hl-module>gleam/io</span>
+<span class=hl-keyword>import</span> <span class=hl-module>lustre/element</span>
+<span class=hl-keyword>import</span> <span class=hl-module>lustre/element/html</span>
+<span class=hl-keyword>import</span> <span class=hl-module>simplifile</span>
+
+<span class=hl-comment>// Where to output the built website. This can be anywhere you like.</span>
+<span class=hl-keyword>const</span> out_directory = <span class=hl-string>&quot;./out&quot;</span>
+
+<span class=hl-comment>// View for our home page.</span>
+<span class=hl-keyword>fn</span> <span class=hl-function>index</span>() -&gt; element.<span class=hl-variant>Element</span>(_) {
+  <span class=hl-module>html</span>.<span class=hl-function>h1</span>([], [<span class=hl-module>html</span>.<span class=hl-function>text</span>(<span class=hl-string>&quot;Hello, and welcome to my blog!&quot;</span>)])
+}
+
+<span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>main</span>() -&gt; <span class=hl-variant>Nil</span> {
+  <span class=hl-keyword>let</span> index_page = <span class=hl-module>element</span>.<span class=hl-function>to_document_string</span>(<span class=hl-function>index</span>())
+
+  <span class=hl-comment>// Ensure our output directory exists. Since this is a build script, crashing</span>
+  <span class=hl-comment>// on an error is probably fine.</span>
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) = <span class=hl-module>simplifile</span>.<span class=hl-function>create_directory_all</span>(out_directory)
+
+  <span class=hl-comment>// Write the index page to our file system.</span>
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) =
+    <span class=hl-module>simplifile</span>.<span class=hl-function>write</span>(<span class=hl-module>filepath</span>.<span class=hl-function>join</span>(out_directory, <span class=hl-string>&quot;index.html&quot;</span>), index_page)
+
+  <span class=hl-module>io</span>.<span class=hl-function>println</span>(<span class=hl-string>&quot;Build succeeded!&quot;</span>)
+}
+</span></code></pre></div><p>If we run this, we should see a <code>Build succeeded!</code> message in the terminal, and
+an <code>out</code> directory should appear, with a single <code>index.html</code> file in it. If we
+open it, we get a nice greeting as we specified.</p><h2 id="hooking-up-blog-posts">Hooking up blog posts</h2><p>Now we have our main page, we can work on creating blog posts. We will have a
+directory containing our blog files, and our build script will convert those to
+HTML and put it into our site. I like to use Markdown for writing blog posts, but
+you could use <a href="https://djot.net/" target="_blank">Djot</a> instead.</p><p>Let&#39;s start by creating our first blog post. I&#39;m going to put it in a directory
+called <code>blog</code>, but you can choose whatever you want. Then, we can make a <code>test.md</code>
+file, and put some content in it:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`# This is my first blog post!
+
+Some content will eventually be here...
+`)">copy</button><pre><code data-lang="md"># This is my first blog post!
+
+Some content will eventually be here...
+</code></pre></div><p>Now we need to set up the code to turn our blog into a page on our site. First
+we need to add a new dependency: I&#39;m using <a href="https://hexdocs.pm/mork" target="_blank"><code>mork</code></a> for
+Markdown parsing, but use <a href="https://hexdocs.pm/jot" target="_blank"><code>jot</code></a> instead if you wish.</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`$ gleam add mork
+`)">copy</button><pre><code data-lang="shell">$ gleam add mork
+</code></pre></div><p>Next, we can implement our blog finding function:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`import mork
+
+// [...]
+
+const blog_directory = &quot;./blog&quot;
+
+type BlogPost {
+  BlogPost(
+    /// The part of the URL to identify this blog post. The URL will look
+    /// something like https://blog.me/&lt;slug&gt;.html
+    slug: String,
+    /// The contents of the blog post as HTML
+    contents: String,
+  )
+}
+
+fn collect_blog_posts() -&gt; List(BlogPost) {
+  let assert Ok(posts) = simplifile.get_files(blog_directory)
+
+  list.map(posts, fn(post) {
+    let path = filepath.join(blog_directory, post)
+    let slug = filepath.strip_extension(post)
+
+    let assert Ok(contents) = simplifile.read(path)
+    let contents_as_html = contents |&gt; mork.parse |&gt; mork.to_html
+
+    BlogPost(slug:, contents: contents_as_html)
+  })
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-keyword>import</span> <span class=hl-module>mork</span>
+
+<span class=hl-comment>// [...]</span>
+
+<span class=hl-keyword>const</span> blog_directory = <span class=hl-string>&quot;./blog&quot;</span>
+
+<span class=hl-keyword>type</span> <span class=hl-variant>BlogPost</span> {
+  <span class=hl-variant>BlogPost</span>(
+    <span class=hl-comment>/// The part of the URL to identify this blog post. The URL will look</span>
+    <span class=hl-comment>/// something like https://blog.me/&lt;slug&gt;.html</span>
+    slug: <span class=hl-variant>String</span>,
+    <span class=hl-comment>/// The contents of the blog post as HTML</span>
+    contents: <span class=hl-variant>String</span>,
+  )
+}
+
+<span class=hl-keyword>fn</span> <span class=hl-function>collect_blog_posts</span>() -&gt; <span class=hl-variant>List</span>(<span class=hl-variant>BlogPost</span>) {
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(posts) = <span class=hl-module>simplifile</span>.<span class=hl-function>get_files</span>(blog_directory)
+
+  <span class=hl-module>list</span>.<span class=hl-function>map</span>(posts, <span class=hl-keyword>fn</span>(post) {
+    <span class=hl-keyword>let</span> path = <span class=hl-module>filepath</span>.<span class=hl-function>join</span>(blog_directory, post)
+    <span class=hl-keyword>let</span> slug = <span class=hl-module>filepath</span>.<span class=hl-function>strip_extension</span>(post)
+
+    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(contents) = <span class=hl-module>simplifile</span>.<span class=hl-function>read</span>(path)
+    <span class=hl-keyword>let</span> contents_as_html = contents <span class=hl-operator>|&gt;</span> <span class=hl-module>mork</span>.<span class=hl-function>parse</span> <span class=hl-operator>|&gt;</span> <span class=hl-module>mork</span>.<span class=hl-function>to_html</span>
+
+    <span class=hl-variant>BlogPost</span>(slug:, contents: contents_as_html)
+  })
+}
+</span></code></pre></div><p>Now that we have a basic function to turn our files into HTML, we need to write
+that HTML to a file so it forms part of our website:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`// [...]
+
+pub fn main() {
+  // [...]
+
+  let blog_posts = collect_blog_posts()
+
+  list.each(blog_posts, fn(post) {
+    let path = filepath.join(out_directory, post.slug &lt;&gt; &quot;.html&quot;)
+
+    let html_document =
+      &quot;&lt;!doctype html&gt;\n&lt;html&gt;&lt;body&gt;&quot; &lt;&gt; post.contents &lt;&gt; &quot;&lt;/body&gt;&lt;/html&gt;&quot;
+
+    let assert Ok(Nil) = simplifile.write(path, html_document)
+  })
+
+  io.println(&quot;Build succeeded!&quot;)
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-comment>// [...]</span>
+
+<span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>main</span>() {
+  <span class=hl-comment>// [...]</span>
+
+  <span class=hl-keyword>let</span> blog_posts = <span class=hl-function>collect_blog_posts</span>()
+
+  <span class=hl-module>list</span>.<span class=hl-function>each</span>(blog_posts, <span class=hl-keyword>fn</span>(post) {
+    <span class=hl-keyword>let</span> path = <span class=hl-module>filepath</span>.<span class=hl-function>join</span>(out_directory, post.slug <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;.html&quot;</span>)
+
+    <span class=hl-keyword>let</span> html_document =
+      <span class=hl-string>&quot;&lt;!doctype html&gt;\n&lt;html&gt;&lt;body&gt;&quot;</span> <span class=hl-operator>&lt;&gt;</span> post.contents <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span>
+
+    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) = <span class=hl-module>simplifile</span>.<span class=hl-function>write</span>(path, html_document)
+  })
+
+  <span class=hl-module>io</span>.<span class=hl-function>println</span>(<span class=hl-string>&quot;Build succeeded!&quot;</span>)
+}
+</span></code></pre></div><p>The <code>element.to_document_string</code> function gives us a full HTML document, but
+<code>mork.to_html</code> doesn&#39;t, so we need to add on the <code>doctype</code> etc. ourselves.</p><p>Running this, we should see a new file in our <code>out</code> directory, called <code>test.html</code>.
+Opening that up in a browser should show a heading and a paragraph, as in our
+MD file.</p><p><strong>Note</strong>: I&#39;ve used <code>mork</code>&#39;s builtin <code>to_html</code> function to convert our
+Markdown to HTML. This works fine, but for more customisation you can also write
+your own conversion function, like I have done for
+<a href="https://github.com/GearsDatapacks/GearsDatapacks.github.io/blob/main/src/website/markdown.gleam" target="_blank">my website</a>.
+It&#39;s a lot of boilerplate though, so I have omitted it in this post for brevity.</p><h2 id="linking-to-our-posts">Linking to our posts</h2><p>So we have our blog post pages generated, but currently they just exist in the
+aether, with no way to access them if you don&#39;t already know they are there. It
+would be great if our home page kept a list of blog posts which we didn&#39;t need
+to update manually. So let&#39;s do that!</p><p>First off, we will need to modify our blog post files a little. Currently they
+just contain markdown content, but we will need a bit more information about the
+post to display on the home page, such as the title, creation date, and a short
+description of the post.</p><p>To do this, we will use <strong>frontmatter</strong>, which is extra info included at the
+beginning of a file which is not rendered as part of the document. We will need
+three more packages: <a href="https://hexdocs.pm/frontmatter" target="_blank"><code>frontmatter</code></a>, for extracting
+the frontmatter from the rest of the document, <a href="https://hexdocs.pm/tom" target="_blank"><code>tom</code></a>,
+for parsing <a href="https://toml.io/en/" target="_blank">TOML</a>, the config format that we will use, and
+<a href="https://hexdocs.pm/gleam_time" target="_blank"><code>gleam_time</code></a> for handling date and time.</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`$ gleam add frontmatter tom gleam_time
+`)">copy</button><pre><code data-lang="shell">$ gleam add frontmatter tom gleam_time
+</code></pre></div><p>Next, lets add some frontmatter to our test post so we can read it from our home
+page script. Frontmatter is delimited by <code>---</code>:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`---
+title = &quot;Test post&quot;
+date = 2026-01-20
+description = &quot;A little post to test our system&quot;
+---
+
+[...]
+`)">copy</button><pre><code data-lang="md">---
+title = &quot;Test post&quot;
+date = 2026-01-20
+description = &quot;A little post to test our system&quot;
+---
+
+[...]
+</code></pre></div><p>I&#39;ve gone for three fields here: <code>title</code>, <code>date</code> and <code>description</code>. If we wanted
+to, we could extract the title and description from the markdown itself, but I
+prefer to be explicit about it. You can also add any other fields you would like,
+such as the author of the post or some tags to categorise it.</p><p>Great, now we need to extract that data from the file when we are indexing our
+posts. First, we need to add the new fields to our <code>BlogPost</code> type:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`type BlogPost {
+  BlogPost(
+    /// The part of the URL to identify this blog post. The URL will look
+    /// something like https://blog.me/&lt;slug&gt;.html
+    slug: String,
+    /// The contents of the blog post as HTML
+    contents: String,
++    title: String,
++    description: String,
++    date: calendar.Date,
+  )
+}
+`)">copy</button><pre><code data-lang="diff-gleam"><span><span><span class=hl-keyword>type</span> <span class=hl-variant>BlogPost</span> {
+  <span class=hl-variant>BlogPost</span>(
+    <span class=hl-comment>/// The part of the URL to identify this blog post. The URL will look</span>
+    <span class=hl-comment>/// something like https://blog.me/&lt;slug&gt;.html</span>
+    slug: <span class=hl-variant>String</span>,
+    <span class=hl-comment>/// The contents of the blog post as HTML</span>
+    contents: <span class=hl-variant>String</span>,</span><span class="hl-added">
++<span>    title: <span class=hl-variant>String</span>,</span></span><span></span><span class="hl-added">
++<span>    description: <span class=hl-variant>String</span>,</span></span><span></span><span class="hl-added">
++<span>    date: calendar.<span class=hl-variant>Date</span>,</span></span><span>
+  )
+}
+</span></span></code></pre></div><p>Next, we need to use the <code>frontmatter</code> and <code>tom</code> packages to extract the metadata:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`import frontmatter
+import gleam/time/calendar
+import tom
+
+// [...]
+
+fn collect_blog_posts() -&gt; List(BlogPost) {
+  let assert Ok(posts) = simplifile.get_files(blog_directory)
+
+  list.map(posts, fn(post) {
+    let slug = filepath.strip_extension(filepath.base_name(post))
+
+    let assert Ok(contents) = simplifile.read(post)
+
++    let assert frontmatter.Extracted(
++      frontmatter: option.Some(frontmatter),
++      content:,
++    ) = frontmatter.extract(contents)
++    let html_content = content |&gt; mork.parse |&gt; mork.to_html
++
++    let assert Ok(metadata) = tom.parse(frontmatter)
++    let assert Ok(title) = tom.get_string(metadata, [&quot;title&quot;])
++    let assert Ok(description) = tom.get_string(metadata, [&quot;description&quot;])
++    let assert Ok(date) = tom.get_date(metadata, [&quot;date&quot;])
+
+-    BlogPost(slug:, contents: html_content)
++    BlogPost(slug:, contents: html_content, title:, description:, date:)
+  })
+}
+`)">copy</button><pre><code data-lang="diff-gleam"><span><span><span class=hl-keyword>import</span> <span class=hl-module>frontmatter</span>
+<span class=hl-keyword>import</span> <span class=hl-module>gleam/time/calendar</span>
+<span class=hl-keyword>import</span> <span class=hl-module>tom</span>
+
+<span class=hl-comment>// [...]</span>
+
+<span class=hl-keyword>fn</span> <span class=hl-function>collect_blog_posts</span>() -&gt; <span class=hl-variant>List</span>(<span class=hl-variant>BlogPost</span>) {
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(posts) = <span class=hl-module>simplifile</span>.<span class=hl-function>get_files</span>(blog_directory)
+
+  <span class=hl-module>list</span>.<span class=hl-function>map</span>(posts, <span class=hl-keyword>fn</span>(post) {
+    <span class=hl-keyword>let</span> slug = <span class=hl-module>filepath</span>.<span class=hl-function>strip_extension</span>(<span class=hl-module>filepath</span>.<span class=hl-function>base_name</span>(post))
+
+    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(contents) = <span class=hl-module>simplifile</span>.<span class=hl-function>read</span>(post)
+</span><span class="hl-added">
++<span>    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> frontmatter.<span class=hl-variant>Extracted</span>(</span></span><span></span><span class="hl-added">
++<span>      frontmatter: option.<span class=hl-variant>Some</span>(frontmatter),</span></span><span></span><span class="hl-added">
++<span>      content:,</span></span><span></span><span class="hl-added">
++<span>    ) = <span class=hl-module>frontmatter</span>.<span class=hl-function>extract</span>(contents)</span></span><span></span><span class="hl-added">
++<span>    <span class=hl-keyword>let</span> html_content = content <span class=hl-operator>|&gt;</span> <span class=hl-module>mork</span>.<span class=hl-function>parse</span> <span class=hl-operator>|&gt;</span> <span class=hl-module>mork</span>.<span class=hl-function>to_html</span></span></span><span></span><span class="hl-added">
++<span></span></span><span></span><span class="hl-added">
++<span>    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(metadata) = <span class=hl-module>tom</span>.<span class=hl-function>parse</span>(frontmatter)</span></span><span></span><span class="hl-added">
++<span>    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(title) = <span class=hl-module>tom</span>.<span class=hl-function>get_string</span>(metadata, [<span class=hl-string>&quot;title&quot;</span>])</span></span><span></span><span class="hl-added">
++<span>    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(description) = <span class=hl-module>tom</span>.<span class=hl-function>get_string</span>(metadata, [<span class=hl-string>&quot;description&quot;</span>])</span></span><span></span><span class="hl-added">
++<span>    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(date) = <span class=hl-module>tom</span>.<span class=hl-function>get_date</span>(metadata, [<span class=hl-string>&quot;date&quot;</span>])</span></span><span>
+</span><span class="hl-removed">
+-<span>    <span class=hl-variant>BlogPost</span>(slug:, contents: html_content)</span></span><span></span><span class="hl-added">
++<span>    <span class=hl-variant>BlogPost</span>(slug:, contents: html_content, title:, description:, date:)</span></span><span>
+  })
+}
+</span></span></code></pre></div><p>We also probably want to sort our blog posts by release date. I will sort them
+from newest to oldest, so more recent posts appear at the top. For the other way
+around, simply swap the arguments to <code>naive_date_compare</code>.</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`fn collect_blog_posts() -&gt; List(BlogPost) {
+  let assert Ok(posts) = simplifile.get_files(blog_directory)
+
+  list.map(posts, fn(post) {
+    // [...]
+  })
++  |&gt; list.sort(fn(a, b) { calendar.naive_date_compare(b.date, a.date) })
+}
+`)">copy</button><pre><code data-lang="diff-gleam"><span><span><span class=hl-keyword>fn</span> <span class=hl-function>collect_blog_posts</span>() -&gt; <span class=hl-variant>List</span>(<span class=hl-variant>BlogPost</span>) {
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(posts) = <span class=hl-module>simplifile</span>.<span class=hl-function>get_files</span>(blog_directory)
+
+  <span class=hl-module>list</span>.<span class=hl-function>map</span>(posts, <span class=hl-keyword>fn</span>(post) {
+    <span class=hl-comment>// [...]</span>
+  })</span><span class="hl-added">
++<span>  <span class=hl-operator>|&gt;</span> <span class=hl-module>list</span>.<span class=hl-function>sort</span>(<span class=hl-keyword>fn</span>(a, b) { <span class=hl-module>calendar</span>.<span class=hl-function>naive_date_compare</span>(b.date, a.date) })</span></span><span>
+}
+</span></span></code></pre></div><p>Now that we have the required data, we can add it to the home page:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`fn index(posts: List(BlogPost)) -&gt; element.Element(_) {
+  html.main([], [
+    html.h1([], [html.text(&quot;Hello, and welcome to my blog!&quot;)]),
+    ..list.map(posts, post)
+  ])
+}
+
+fn post(post: BlogPost) -&gt; element.Element(_) {
+  let url = &quot;/&quot; &lt;&gt; post.slug &lt;&gt; &quot;.html&quot;
+  let date =
+    int.to_string(post.date.day)
+    &lt;&gt; &quot; &quot;
+    &lt;&gt; calendar.month_to_string(post.date.month)
+    &lt;&gt; &quot;, &quot;
+    &lt;&gt; int.to_string(post.date.year)
+
+  html.div([], [
+    html.h2([], [html.a([attribute.href(url)], [html.text(post.title)])]),
+    html.span([], [html.text(date)]),
+    html.span([], [html.text(&quot; - &quot;)]),
+    html.span([], [html.text(post.description)]),
+  ])
+}
+`)">copy</button><pre><code data-lang="gleam"><span><span class=hl-keyword>fn</span> <span class=hl-function>index</span>(posts: <span class=hl-variant>List</span>(<span class=hl-variant>BlogPost</span>)) -&gt; element.<span class=hl-variant>Element</span>(_) {
+  <span class=hl-module>html</span>.<span class=hl-function>main</span>([], [
+    <span class=hl-module>html</span>.<span class=hl-function>h1</span>([], [<span class=hl-module>html</span>.<span class=hl-function>text</span>(<span class=hl-string>&quot;Hello, and welcome to my blog!&quot;</span>)]),
+    ..<span class=hl-module>list</span>.<span class=hl-function>map</span>(posts, post)
+  ])
+}
+
+<span class=hl-keyword>fn</span> <span class=hl-function>post</span>(post: <span class=hl-variant>BlogPost</span>) -&gt; element.<span class=hl-variant>Element</span>(_) {
+  <span class=hl-keyword>let</span> url = <span class=hl-string>&quot;/&quot;</span> <span class=hl-operator>&lt;&gt;</span> post.slug <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;.html&quot;</span>
+  <span class=hl-keyword>let</span> date =
+    <span class=hl-module>int</span>.<span class=hl-function>to_string</span>(post.date.day)
+    <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot; &quot;</span>
+    <span class=hl-operator>&lt;&gt;</span> <span class=hl-module>calendar</span>.<span class=hl-function>month_to_string</span>(post.date.month)
+    <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;, &quot;</span>
+    <span class=hl-operator>&lt;&gt;</span> <span class=hl-module>int</span>.<span class=hl-function>to_string</span>(post.date.year)
+
+  <span class=hl-module>html</span>.<span class=hl-function>div</span>([], [
+    <span class=hl-module>html</span>.<span class=hl-function>h2</span>([], [<span class=hl-module>html</span>.<span class=hl-function>a</span>([<span class=hl-module>attribute</span>.<span class=hl-function>href</span>(url)], [<span class=hl-module>html</span>.<span class=hl-function>text</span>(post.title)])]),
+    <span class=hl-module>html</span>.<span class=hl-function>span</span>([], [<span class=hl-module>html</span>.<span class=hl-function>text</span>(date)]),
+    <span class=hl-module>html</span>.<span class=hl-function>span</span>([], [<span class=hl-module>html</span>.<span class=hl-function>text</span>(<span class=hl-string>&quot; - &quot;</span>)]),
+    <span class=hl-module>html</span>.<span class=hl-function>span</span>([], [<span class=hl-module>html</span>.<span class=hl-function>text</span>(post.description)]),
+  ])
+}
+</span></code></pre></div><p>Then we just need to call our <code>index</code> function with the blog post data:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`pub fn main() -&gt; Nil {
+-  let index_page = element.to_document_string(index())
++  let blog_posts = collect_blog_posts()
++  let index_page = element.to_document_string(index(blog_posts))
+
+  // Ensure our output directory exists. Since this is a build script, crashing
+  // on an error is probably fine.
+  let assert Ok(Nil) = simplifile.create_directory_all(out_directory)
+
+  // Write the index page to our file system.
+  let assert Ok(Nil) =
+    simplifile.write(filepath.join(out_directory, &quot;index.html&quot;), index_page)
+
+-  let blog_posts = collect_blog_posts()
+
+  // [...]
+}
+`)">copy</button><pre><code data-lang="diff-gleam"><span><span><span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>main</span>() -&gt; <span class=hl-variant>Nil</span> {</span><span class="hl-removed">
+-<span>  <span class=hl-keyword>let</span> index_page = <span class=hl-module>element</span>.<span class=hl-function>to_document_string</span>(<span class=hl-function>index</span>())</span></span><span></span><span class="hl-added">
++<span>  <span class=hl-keyword>let</span> blog_posts = <span class=hl-function>collect_blog_posts</span>()</span></span><span></span><span class="hl-added">
++<span>  <span class=hl-keyword>let</span> index_page = <span class=hl-module>element</span>.<span class=hl-function>to_document_string</span>(<span class=hl-function>index</span>(blog_posts))</span></span><span>
+
+  <span class=hl-comment>// Ensure our output directory exists. Since this is a build script, crashing</span>
+  <span class=hl-comment>// on an error is probably fine.</span>
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) = <span class=hl-module>simplifile</span>.<span class=hl-function>create_directory_all</span>(out_directory)
+
+  <span class=hl-comment>// Write the index page to our file system.</span>
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) =
+    <span class=hl-module>simplifile</span>.<span class=hl-function>write</span>(<span class=hl-module>filepath</span>.<span class=hl-function>join</span>(out_directory, <span class=hl-string>&quot;index.html&quot;</span>), index_page)
+</span><span class="hl-removed">
+-<span>  <span class=hl-keyword>let</span> blog_posts = <span class=hl-function>collect_blog_posts</span>()</span></span><span>
+
+  <span class=hl-comment>// [...]</span>
+}
+</span></span></code></pre></div><p>And voila! We now have a list of blog posts on our home page!</p><h2 id="adding-styling-and-images">Adding styling and images</h2><p>So our website is working great now, but it looks a bit dull, with absolutely
+no styling. You might also want to add images, to illustrate something in a blog
+post, or an icon for the website.</p><p>For styling, you have two main options: <a href="https://tailwindcss.com/" target="_blank">Tailwind</a> and
+plain ol&#39; CSS. For Tailwind, there&#39;s nothing special you need to do for Gleam.
+Simply add tailwind using <code>npm</code>, and run the CLI after adding any classes to the
+page that you want. More details in the Tailwind docs.</p><p>For static CSS and images, it&#39;s even simpler: Just create a directory. I&#39;m going
+to call mine <code>static</code>. I&#39;ll create a <code>style.css</code> to put some styles in:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`body {
+  background-color: rgb(30 41 59);
+  color: white;
+}
+
+a {
+  font-weight: bold;
+  color: white;
+}
+`)">copy</button><pre><code data-lang="css">body {
+  background-color: rgb(30 41 59);
+  color: white;
+}
+
+a {
+  font-weight: bold;
+  color: white;
+}
+</code></pre></div><p>You&#39;ll of course want more than this, but I can&#39;t include a full stylesheet here.</p><p>Now let&#39;s make sure all our static assets get copied to the output directory:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`// [...]
+
+// Where to output the built website. This can be anywhere you like.
+const out_directory = &quot;./out&quot;
+
++// Directory containing our static assets
++const static_directory = &quot;./static&quot;
+
+// [...]
+
+pub fn main() -&gt; Nil {
+  let blog_posts = collect_blog_posts()
+  let index_page = element.to_document_string(index(blog_posts))
+
++  // Delete old output directory to ensure no files are left over
++  let _ = simplifile.delete(out_directory)
++  // Copy all our static assets to the output directory
++  let assert Ok(Nil) =
++    simplifile.copy_directory(static_directory, out_directory)
+
+-  // Ensure our output directory exists. Since this is a build script, crashing
+-  // on an error is probably fine.
+-  let assert Ok(Nil) = simplifile.create_directory_all(out_directory)
+
+  // Write the index page to our file system.
+  let assert Ok(Nil) =
+    simplifile.write(filepath.join(out_directory, &quot;index.html&quot;), index_page)
+
+  // [...]
+}
+`)">copy</button><pre><code data-lang="diff-gleam"><span><span><span class=hl-comment>// [...]</span>
+
+<span class=hl-comment>// Where to output the built website. This can be anywhere you like.</span>
+<span class=hl-keyword>const</span> out_directory = <span class=hl-string>&quot;./out&quot;</span>
+</span><span class="hl-added">
++<span><span class=hl-comment>// Directory containing our static assets</span></span></span><span></span><span class="hl-added">
++<span><span class=hl-keyword>const</span> static_directory = <span class=hl-string>&quot;./static&quot;</span></span></span><span>
+
+<span class=hl-comment>// [...]</span>
+
+<span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>main</span>() -&gt; <span class=hl-variant>Nil</span> {
+  <span class=hl-keyword>let</span> blog_posts = <span class=hl-function>collect_blog_posts</span>()
+  <span class=hl-keyword>let</span> index_page = <span class=hl-module>element</span>.<span class=hl-function>to_document_string</span>(<span class=hl-function>index</span>(blog_posts))
+</span><span class="hl-added">
++<span>  <span class=hl-comment>// Delete old output directory to ensure no files are left over</span></span></span><span></span><span class="hl-added">
++<span>  <span class=hl-keyword>let</span> _ = <span class=hl-module>simplifile</span>.<span class=hl-function>delete</span>(out_directory)</span></span><span></span><span class="hl-added">
++<span>  <span class=hl-comment>// Copy all our static assets to the output directory</span></span></span><span></span><span class="hl-added">
++<span>  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) =</span></span><span></span><span class="hl-added">
++<span>    <span class=hl-module>simplifile</span>.<span class=hl-function>copy_directory</span>(static_directory, out_directory)</span></span><span>
+</span><span class="hl-removed">
+-<span>  <span class=hl-comment>// Ensure our output directory exists. Since this is a build script, crashing</span></span></span><span></span><span class="hl-removed">
+-<span>  <span class=hl-comment>// on an error is probably fine.</span></span></span><span></span><span class="hl-removed">
+-<span>  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) = <span class=hl-module>simplifile</span>.<span class=hl-function>create_directory_all</span>(out_directory)</span></span><span>
+
+  <span class=hl-comment>// Write the index page to our file system.</span>
+  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) =
+    <span class=hl-module>simplifile</span>.<span class=hl-function>write</span>(<span class=hl-module>filepath</span>.<span class=hl-function>join</span>(out_directory, <span class=hl-string>&quot;index.html&quot;</span>), index_page)
+
+  <span class=hl-comment>// [...]</span>
+}
+</span></span></code></pre></div><p>Now, when we <code>gleam run</code>, there should be a new <code>style.css</code> file in our <code>out</code>
+directory! We just need to reference it from our pages.</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`pub fn main() -&gt; Nil {
+  let blog_posts = collect_blog_posts()
+-  let index_page = element.to_string(index(blog_posts))
++  let index_page = page(element.to_string(index(blog_posts)))
+
+  // [...]
+
+  list.each(blog_posts, fn(post) {
+    let path = filepath.join(out_directory, post.slug &lt;&gt; &quot;.html&quot;)
+
+-    let html_document =
+-      &quot;&lt;!doctype html&gt;\n&lt;html&gt;&lt;body&gt;&quot; &lt;&gt; post.contents &lt;&gt; &quot;&lt;/body&gt;&lt;/html&gt;&quot;
+-    let assert Ok(Nil) = simplifile.write(path, html_document)
++    let assert Ok(Nil) = simplifile.write(path, page(post.contents))
+  })
+
+  io.println(&quot;Build succeeded!&quot;)
+}
+
+fn page(contents: String) -&gt; String {
+  &quot;&lt;!doctype html&gt;&lt;html&gt;
+&lt;head&gt;&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;/style.css\&quot; /&gt;&lt;/head&gt;
+&lt;body&gt;&quot; &lt;&gt; contents &lt;&gt; &quot;&lt;/body&gt;
+&lt;/html&gt;&quot;
+}
+`)">copy</button><pre><code data-lang="diff-gleam"><span><span><span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>main</span>() -&gt; <span class=hl-variant>Nil</span> {
+  <span class=hl-keyword>let</span> blog_posts = <span class=hl-function>collect_blog_posts</span>()</span><span class="hl-removed">
+-<span>  <span class=hl-keyword>let</span> index_page = <span class=hl-module>element</span>.<span class=hl-function>to_string</span>(<span class=hl-function>index</span>(blog_posts))</span></span><span></span><span class="hl-added">
++<span>  <span class=hl-keyword>let</span> index_page = <span class=hl-function>page</span>(<span class=hl-module>element</span>.<span class=hl-function>to_string</span>(<span class=hl-function>index</span>(blog_posts)))</span></span><span>
+
+  <span class=hl-comment>// [...]</span>
+
+  <span class=hl-module>list</span>.<span class=hl-function>each</span>(blog_posts, <span class=hl-keyword>fn</span>(post) {
+    <span class=hl-keyword>let</span> path = <span class=hl-module>filepath</span>.<span class=hl-function>join</span>(out_directory, post.slug <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;.html&quot;</span>)
+</span><span class="hl-removed">
+-<span>    <span class=hl-keyword>let</span> html_document =</span></span><span></span><span class="hl-removed">
+-<span>      <span class=hl-string>&quot;&lt;!doctype html&gt;\n&lt;html&gt;&lt;body&gt;&quot;</span> <span class=hl-operator>&lt;&gt;</span> post.contents <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;&lt;/body&gt;&lt;/html&gt;&quot;</span></span></span><span></span><span class="hl-removed">
+-<span>    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) = <span class=hl-module>simplifile</span>.<span class=hl-function>write</span>(path, html_document)</span></span><span></span><span class="hl-added">
++<span>    <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) = <span class=hl-module>simplifile</span>.<span class=hl-function>write</span>(path, <span class=hl-function>page</span>(post.contents))</span></span><span>
+  })
+
+  <span class=hl-module>io</span>.<span class=hl-function>println</span>(<span class=hl-string>&quot;Build succeeded!&quot;</span>)
+}
+
+<span class=hl-keyword>fn</span> <span class=hl-function>page</span>(contents: <span class=hl-variant>String</span>) -&gt; <span class=hl-variant>String</span> {
+  <span class=hl-string>&quot;&lt;!doctype html&gt;&lt;html&gt;
+&lt;head&gt;&lt;link rel=\&quot;stylesheet\&quot; href=\&quot;/style.css\&quot; /&gt;&lt;/head&gt;
+&lt;body&gt;&quot;</span> <span class=hl-operator>&lt;&gt;</span> contents <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;&lt;/body&gt;
+&lt;/html&gt;&quot;</span>
+}
+</span></span></code></pre></div><p>And now, all our pages will follow our stylesheet. If you like, you can customise
+this more, so that, for example, you have a different style for your posts as the
+home page.</p><p>Any images you want to add can simply be put in the <code>static</code> directory, and
+referenced normally from any part of the website.</p><h2 id="adding-an-rss-feed">Adding an RSS feed</h2><p>The last feature we need for our blog is an <a href="https://en.wikipedia.org/wiki/RSS" target="_blank">RSS feed</a>,
+so that people using <a href="https://en.wikipedia.org/wiki/News_aggregator" target="_blank">RSS readers</a>
+can read our blog. This is entirely optional, but a nice feature for our readers.</p><p>We need one final library to build the RSS feed, <a href="https://hexdocs.pm/webls" target="_blank"><code>webls</code></a>:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`$ gleam add webls
+`)">copy</button><pre><code data-lang="shell">$ gleam add webls
+</code></pre></div><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`import webls/rss
+
+// [...]
+
+pub fn main() -&gt; Nil {
+  // [...]
+
++  let feed = build_feed(blog_posts)
++  let assert Ok(Nil) = simplifile.write(&quot;feed.xml&quot;, rss.to_string([feed]))
+
+  io.println(&quot;Build succeeded!&quot;)
+}
+
+fn build_feed(blog_posts: List(BlogPost)) -&gt; rss.RssChannel {
+  let items =
+    list.map(blog_posts, fn(post) {
+      let url = &quot;https://blog.me/&quot; &lt;&gt; post.slug &lt;&gt; &quot;.html&quot;
+
+      rss.item(post.title, post.description)
+      |&gt; rss.with_item_link(url)
+      |&gt; rss.with_item_pub_date(timestamp.from_calendar(
+        post.date,
+        // If you want to add more precise timings to publishing dates you can,
+        // but I since our `date` field only contains the day, we just assume
+        // midnight.
+        calendar.TimeOfDay(0, 0, 0, 0),
+        calendar.utc_offset,
+      ))
+    })
+
+  rss.channel(&quot;My Blog&quot;, &quot;Blog about interesting stuff&quot;, &quot;https://blog.me&quot;)
+  |&gt; rss.with_channel_items(items)
+}
+`)">copy</button><pre><code data-lang="diff-gleam"><span><span><span class=hl-keyword>import</span> <span class=hl-module>webls/rss</span>
+
+<span class=hl-comment>// [...]</span>
+
+<span class=hl-keyword>pub</span> <span class=hl-keyword>fn</span> <span class=hl-function>main</span>() -&gt; <span class=hl-variant>Nil</span> {
+  <span class=hl-comment>// [...]</span>
+</span><span class="hl-added">
++<span>  <span class=hl-keyword>let</span> feed = <span class=hl-function>build_feed</span>(blog_posts)</span></span><span></span><span class="hl-added">
++<span>  <span class=hl-keyword>let</span> <span class=hl-keyword>assert</span> <span class=hl-variant>Ok</span>(<span class=hl-variant>Nil</span>) = <span class=hl-module>simplifile</span>.<span class=hl-function>write</span>(<span class=hl-string>&quot;feed.xml&quot;</span>, <span class=hl-module>rss</span>.<span class=hl-function>to_string</span>([feed]))</span></span><span>
+
+  <span class=hl-module>io</span>.<span class=hl-function>println</span>(<span class=hl-string>&quot;Build succeeded!&quot;</span>)
+}
+
+<span class=hl-keyword>fn</span> <span class=hl-function>build_feed</span>(blog_posts: <span class=hl-variant>List</span>(<span class=hl-variant>BlogPost</span>)) -&gt; rss.<span class=hl-variant>RssChannel</span> {
+  <span class=hl-keyword>let</span> items =
+    <span class=hl-module>list</span>.<span class=hl-function>map</span>(blog_posts, <span class=hl-keyword>fn</span>(post) {
+      <span class=hl-keyword>let</span> url = <span class=hl-string>&quot;https://blog.me/&quot;</span> <span class=hl-operator>&lt;&gt;</span> post.slug <span class=hl-operator>&lt;&gt;</span> <span class=hl-string>&quot;.html&quot;</span>
+
+      <span class=hl-module>rss</span>.<span class=hl-function>item</span>(post.title, post.description)
+      <span class=hl-operator>|&gt;</span> <span class=hl-module>rss</span>.<span class=hl-function>with_item_link</span>(url)
+      <span class=hl-operator>|&gt;</span> <span class=hl-module>rss</span>.<span class=hl-function>with_item_pub_date</span>(<span class=hl-module>timestamp</span>.<span class=hl-function>from_calendar</span>(
+        post.date,
+        <span class=hl-comment>// If you want to add more precise timings to publishing dates you can,</span>
+        <span class=hl-comment>// but I since our `date` field only contains the day, we just assume</span>
+        <span class=hl-comment>// midnight.</span>
+        calendar.<span class=hl-variant>TimeOfDay</span>(<span class=hl-number>0</span>, <span class=hl-number>0</span>, <span class=hl-number>0</span>, <span class=hl-number>0</span>),
+        calendar.utc_offset,
+      ))
+    })
+
+  <span class=hl-module>rss</span>.<span class=hl-function>channel</span>(<span class=hl-string>&quot;My Blog&quot;</span>, <span class=hl-string>&quot;Blog about interesting stuff&quot;</span>, <span class=hl-string>&quot;https://blog.me&quot;</span>)
+  <span class=hl-operator>|&gt;</span> <span class=hl-module>rss</span>.<span class=hl-function>with_channel_items</span>(items)
+}
+</span></span></code></pre></div><p>That&#39;s it! We build the feed, and write it to a file called <code>feed.xml</code>. You can
+call this anything you want, but <code>feed.xml</code> is a common name. And of course make
+sure to replace <code>blog.me</code> with your actual domain.</p><p>That&#39;s it! Once your website is published, anyone can put <code>https://yoursite.com/feed.xml</code>
+into their RSS reader and get your updates from your blog.</p><p>There are more fields you can add to both the <code>Channel</code> and <code>Item</code>, what is given
+here is just the bare minimum. See the <a href="http://rssboard.org/rss-specification" target="_blank">RSS specification</a>
+for more information.</p><h2 id="deploying">Deploying</h2><p>That&#39;s it! We now have our fully functional website. The last thing we need to
+do is deploy it to the internet so that other people can see it! There are many
+options on how to do this, and I won&#39;t go into them all here.</p><p>Since our website just builds static HTML, it&#39;s really easy to upload basically
+anywhere. You just need some kind of script that runs the Gleam program, and
+copies the output files to wherever they need to go.</p><p>For example, <a href="https://github.com/GearsDatapacks/GearsDatapacks.github.io/blob/main/.github/workflows/publish.yml" target="_blank">here&#39;s</a>
+the script I use to deploy this website to GitHub Pages.</p><h2 id="conclusion">Conclusion</h2><p>Yes! It&#39;s that simple to make your own website with a data driven blog, custom
+styling and an RSS feed. And here&#39;s all it took:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`$ tree .
+.
+├── blog
+│   └── test.md
+├── gleam.toml
+├── manifest.toml
+├── src
+│   └── blog.gleam
+└── static
+    └── style.css
+
+$ cloc .
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Gleam                            1             24             12            103
+TOML                             2              5             12             44
+YAML                             1              2              1             20
+CSS                              1              1              0              8
+Markdown                         1              2              0              7
+-------------------------------------------------------------------------------
+SUM:                             6             34             25            182
+-------------------------------------------------------------------------------
+`)">copy</button><pre><code data-lang="shell">$ tree .
+.
+├── blog
+│   └── test.md
+├── gleam.toml
+├── manifest.toml
+├── src
+│   └── blog.gleam
+└── static
+    └── style.css
+
+$ cloc .
+-------------------------------------------------------------------------------
+Language                     files          blank        comment           code
+-------------------------------------------------------------------------------
+Gleam                            1             24             12            103
+TOML                             2              5             12             44
+YAML                             1              2              1             20
+CSS                              1              1              0              8
+Markdown                         1              2              0              7
+-------------------------------------------------------------------------------
+SUM:                             6             34             25            182
+-------------------------------------------------------------------------------
+</code></pre></div><p>Just 182 lines of code!</p><p>Of course, this is just a starting point. You can add other non-blog pages very
+easily, in the same way we do our <code>index</code> page. You can also change the home page
+to be controlled by a Markdown file instead of Lustre HTML, which will allow you
+to add new content much more easily in future. Personally, I like a more customised
+layout for my home page.</p><p>Now go write some blog posts!</p></div></main><footer>Made with <a href="https://lustre.build" target="_blank">Lustre</a> and <a href="https://gleam.run" target="_blank">Gleam</a><br>Source: <a href="https://github.com/GearsDatapacks/GearsDatapacks.github.io" target="_blank">GitHub</a></footer></body></html>
