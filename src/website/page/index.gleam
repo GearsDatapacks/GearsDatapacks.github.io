@@ -111,15 +111,15 @@ fn post(post: blog.Post(_)) -> element.Element(_) {
 
 const talks = [
   Talk(
-    description: "Optimising the hell out of Gleam (Recording coming soon)",
-    url: "https://gleamgathering.com/#speakers",
+    description: "Optimising the hell out of Gleam (Recording)",
+    url: "https://www.youtube.com/watch?v=D_HaX_O1TAo",
     date: "21 February, 2026",
     conference: "Gleam Gathering",
     location: "Origin Workspace, Bristol",
   ),
   Talk(
-    description: "Panel: Chat with Gleam core team (Recording coming soon)",
-    url: "https://gleamgathering.com/#speakers",
+    description: "Panel: Chat with Gleam core team (Recording)",
+    url: "https://www.youtube.com/watch?v=LgfzH_WBlr4",
     date: "21 February, 2026",
     conference: "Gleam Gathering",
     location: "Origin Workspace, Bristol",
