@@ -39,6 +39,11 @@ pub fn main() {
     |> rss.with_channel_docs
     |> rss.with_channel_items(
       list.map(posts, fn(post) {
+        let category = case post.mini {
+          True -> "mini"
+          False -> "full"
+        }
+
         rss.item(post.title, post.description)
         |> rss.with_item_link("https://gearsco.de/blog/" <> post.slug)
         |> rss.with_item_pub_date(timestamp.from_calendar(
@@ -46,6 +51,7 @@ pub fn main() {
           calendar.TimeOfDay(0, 0, 0, 0),
           calendar.utc_offset,
         ))
+        |> rss.with_item_categories([category])
       }),
     )
 

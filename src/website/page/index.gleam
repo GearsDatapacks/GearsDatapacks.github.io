@@ -95,7 +95,13 @@ fn post(post: blog.Post(_)) -> element.Element(_) {
     <> ", "
     <> int.to_string(year)
 
+  let mini_tag = case post.mini {
+    False -> element.none()
+    True -> html.span([attribute.class("tag")], [html.text("mini")])
+  }
+
   html.div([], [
+    mini_tag,
     html.a(
       [
         attribute.href("/blog/" <> post.slug),

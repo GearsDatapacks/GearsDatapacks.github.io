@@ -25,11 +25,14 @@ pub fn posts() -> List(Post(_)) {
     let title = get_string_key(metadata, "title")
     let description = get_string_key(metadata, "description")
     let assert Ok(date) = tom.get_date(metadata, ["date"])
+    let mini = case tom.get_bool(metadata, ["mini"]) {
+      Ok(mini) -> mini
+      Error(_) -> False
+    }
 
-    // Remove .md suffix
-    let slug = string.drop_end(file, 3)
+    let slug = string.remove_suffix(file, ".md")
 
-    Ok(Post(title:, slug:, date:, contents:, description:))
+    Ok(Post(title:, slug:, mini:, date:, contents:, description:))
   })
   |> list.sort(fn(a, b) { calendar.naive_date_compare(b.date, a.date) })
 }
@@ -43,6 +46,7 @@ pub type Post(a) {
   Post(
     title: String,
     slug: String,
+    mini: Bool,
     date: calendar.Date,
     description: String,
     contents: List(element.Element(a)),
