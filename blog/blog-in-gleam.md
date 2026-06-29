@@ -3,16 +3,16 @@ title = "Building a Blog in Gleam"
 date = 2026-01-20
 description = """2026 is the year of blog posts, or so I hear. The thing is, there are so many
 options that you can use to make your blog, many of which are very complicated
-and feature rich — and sometimes you just want to start writing, and not have to
+and feature rich – and sometimes you just want to start writing, and not have to
 deal with all that complexity."""
 ---
 
 2026 is the year of blog posts, or so I hear. The thing is, there are so many
 options that you can use to make your blog, many of which are very complicated
-and feature rich — and sometimes you just want to start writing, and not have to
+and feature rich – and sometimes you just want to start writing, and not have to
 deal with all that complexity.
 
-That's what this is — an alternative to all the complicated frameworks out there,
+That's what this is – an alternative to all the complicated frameworks out there,
 a nice simple starting point which you can expand to your heart's desire, or
 leave as is. Written in Gleam.
 
