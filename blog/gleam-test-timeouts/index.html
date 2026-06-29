@@ -60,8 +60,8 @@ Using that knowledge we can define a custom type to represent the timeout tuple:
 </span></code></pre></div><p>You can use <code>Float</code> instead for <code>time</code> here, but I find I rarely need to set my
 timeout to a fraction of a second, so <code>Int</code> is more convenient. Now, we can take
 advantage of Gleam&#39;s <a href="https://tour.gleam.run/advanced-features/use/" target="_blank"><code>use</code> syntax</a>,
-which allows us to turn a call to a higher order function — where we pass an anonymous
-function, like we did in the previous example — into a flattened statement.
+which allows us to turn a call to a higher order function – where we pass an anonymous
+function, like we did in the previous example – into a flattened statement.
 We now get a much nicer looking test:</p><div class="codeblock"><button class="copy-button" onclick="navigator.clipboard.writeText(`pub type Timeout(a) {
   Timeout(time: Int, function: fn() -&gt; a)
 }
