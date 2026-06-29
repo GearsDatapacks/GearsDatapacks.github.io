@@ -7,24 +7,34 @@
 <language>en-gb</language>
 <docs>https://www.rssboard.org/rss-2-0-1</docs>
 <item>
+<title>Welcome to my mini blog</title>
+<description>A new category of blog posts</description>
+<link>https://gearsco.de/blog/welcome-to-my-mini-blog</link>
+<pubDate>Mon, 29 Jun 2026 00:00:00 GMT</pubDate>
+<category>mini</category>
+</item>
+<item>
 <title>Building a Blog in Gleam</title>
 <description>2026 is the year of blog posts, or so I hear. The thing is, there are so many
 options that you can use to make your blog, many of which are very complicated
-and feature rich — and sometimes you just want to start writing, and not have to
+and feature rich – and sometimes you just want to start writing, and not have to
 deal with all that complexity.</description>
 <link>https://gearsco.de/blog/blog-in-gleam</link>
 <pubDate>Tue, 20 Jan 2026 00:00:00 GMT</pubDate>
+<category>full</category>
 </item>
 <item>
 <title>Making the Most of Bit Arrays</title>
 <description>Gleam has a special piece of syntax that most other languages don't: Bit arrays. They are extremely powerful, but unfortunately the documentation is a little sparse.</description>
 <link>https://gearsco.de/blog/bit-array-syntax</link>
 <pubDate>Thu, 18 Dec 2025 00:00:00 GMT</pubDate>
+<category>full</category>
 </item>
 <item>
 <title>Test Timeouts in Gleam</title>
 <description>By default, Gleam tests come with a timeout of 5 seconds. It's not as easy as you might think to remove it.</description>
 <link>https://gearsco.de/blog/gleam-test-timeouts</link>
 <pubDate>Tue, 25 Nov 2025 00:00:00 GMT</pubDate>
+<category>full</category>
 </item></channel>
 </rss>

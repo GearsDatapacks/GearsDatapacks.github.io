@@ -239,3 +239,10 @@ pre code .hl-added {
 pre code .hl-removed {
   background-color: #400000;
 }
+
+.tag {
+  padding: 0 .5rem;
+  border: 1px solid white;
+  border-radius: 5%;
+  margin-right: .3rem;
+}
