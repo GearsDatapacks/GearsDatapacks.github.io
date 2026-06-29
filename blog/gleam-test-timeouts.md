@@ -86,8 +86,8 @@ pub type Timeout(a) {
 You can use `Float` instead for `time` here, but I find I rarely need to set my
 timeout to a fraction of a second, so `Int` is more convenient. Now, we can take
 advantage of Gleam's [`use` syntax](https://tour.gleam.run/advanced-features/use/),
-which allows us to turn a call to a higher order function — where we pass an anonymous
-function, like we did in the previous example — into a flattened statement.
+which allows us to turn a call to a higher order function – where we pass an anonymous
+function, like we did in the previous example – into a flattened statement.
 We now get a much nicer looking test:
 
 ```gleam
